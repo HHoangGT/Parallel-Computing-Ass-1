@@ -9,7 +9,7 @@ cmake -S . -B build && cmake --build build
 ```
 
 Options on the first configure: `-DCMAKE_CXX_COMPILER=<path>` (macOS defaults to Homebrew LLVM when installed), `-DCACHE_LINE=<bytes>` (auto-detected: `sysctl` on macOS, `getconf` on Linux, 64 on Windows), `-DWITH_OPENMP=OFF`, `-DWITH_MPI=OFF`.
-Dependencies: macOS `brew install llvm libomp open-mpi`; Linux g++ 13, libomp, OpenMPI; Windows MSVC or clang-cl (the shell scripts need Git Bash or WSL).
+Dependencies: macOS `brew install llvm libomp open-mpi`; Linux g++ 13, libomp, OpenMPI; Windows Visual Studio with the "C++ Clang Compiler" component, configured as `cmake -S . -B build -G Ninja -DCMAKE_CXX_COMPILER=clang-cl` (or `cl` from a Developer shell; the default Visual Studio generator is rejected because it builds Debug into `build/<Config>/`), and the shell scripts need Git Bash or WSL.
 
 ## Tests
 
