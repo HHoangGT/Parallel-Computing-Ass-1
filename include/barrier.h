@@ -14,8 +14,7 @@ struct alignas(CACHE_LINE) PaddedBool {
     bool value = true;
 };
 
-// Sense-reversing barrier (slide 04 p14): toggle local sense, FAI(count); the last arrival resets count
-// first, then flips sense (release). lsense is one padded slot per thread to avoid false sharing.
+// The last arrival resets count before it flips sense, so no thread can lap the others.
 template <bool Backoff>
 class alignas(CACHE_LINE > 64 ? CACHE_LINE : 64) SenseReversingBarrierT {  // outer alignment kept for the nopad ablation
     const int N;
@@ -42,7 +41,7 @@ public:
 using SenseReversingBarrier = SenseReversingBarrierT<false>;
 using SenseReversingBarrierBO = SenseReversingBarrierT<true>;
 
-// Baselines: C++20 std::barrier (04 p28-31); pthread_barrier_t exists on Linux only (not on macOS).
+// pthread_barrier_t exists on Linux only.
 class StdBarrier {
     std::barrier<> barrier_;
 

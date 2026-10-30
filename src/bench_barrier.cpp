@@ -17,8 +17,7 @@ double run_once(int threads, long episodes) {
 
 #ifdef _OPENMP
 double run_omp(int threads, long episodes) {
-    // Time inside the parallel region (after one untimed barrier) so OpenMP's thread start-up is
-    // excluded, matching run_threads_timed for the other barriers.
+    // Timed inside the region so OpenMP's thread start-up is excluded.
     double seconds = 0;
 #pragma omp parallel num_threads(threads)
     {

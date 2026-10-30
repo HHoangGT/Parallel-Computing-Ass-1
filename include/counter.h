@@ -82,8 +82,7 @@ public:
     explicit ShardedCounter(int nshards) : slots_(new Slot[nshards]), nshards_(nshards) {}
 
     long get_next_value() {
-        // fetch_add, not load + store: the slot is uncontended in the normal case (one thread per
-        // slot), so this costs about the same, but it stays correct if two threads ever share a slot.
+        // fetch_add stays correct even if two threads ever share a slot.
         return slots_[my_slot(nshards_)].value.fetch_add(1, mo_relaxed);
     }
     long get() const {

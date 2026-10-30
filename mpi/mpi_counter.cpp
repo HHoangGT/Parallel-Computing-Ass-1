@@ -1,9 +1,4 @@
-// Part 4: distributed concurrent counter over MPI-3 one-sided communication.
-// The counter lives in rank 0's window; every rank calls get_next_value() --ops times.
-//   faa    : MPI_Fetch_and_op(MPI_SUM)          (= fetch_add)
-//   cas    : MPI_Compare_and_swap retry loop    (= CAS loop)
-//   cas_bo : CAS loop + exponential backoff
-// Correctness: rank 0 checks final value == nprocs * ops.
+// Part 4 counter in rank 0's window: faa, cas, cas_bo (CAS + backoff).
 #include <cstdio>
 
 #include "common/common.h"

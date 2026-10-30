@@ -2,9 +2,7 @@
 
 #include <atomic>
 
-// Memory orders used by the locks, barrier and counters. The SEQ_CST CMake option (ablation)
-// defines ASM1_SEQ_CST, which turns every one of them into memory_order_seq_cst, so the cost of
-// sequential consistency can be measured against the acquire/release orders of the slides.
+// Building with SEQ_CST=ON (ablation) turns every order below into seq_cst.
 #ifdef ASM1_SEQ_CST
 inline constexpr std::memory_order mo_relaxed = std::memory_order_seq_cst;
 inline constexpr std::memory_order mo_acquire = std::memory_order_seq_cst;

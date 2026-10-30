@@ -75,9 +75,7 @@ int main(int argc, char** argv) {
     int failures = 0;
     for (auto& name : counter_names()) {
 #if UNDER_TSAN
-        // A tight TAS/TTAS/Ticket/MCS spin livelocks under TSan: TSan serialises the atomic operations
-        // on one variable through an internal lock, so spinners starve the holder. test_locks already
-        // checks these locks under TSan; here only counters that do not spin on our own locks run.
+        // Spinlock counters livelock under TSan; test_locks checks those locks.
         if (name.rfind("lock_", 0) == 0 && name != "lock_mutex" && name != "lock_pthread" && name != "lock_omp") {
             std::printf("[SKIP] %s (spinlock under TSan; covered by test_locks)\n", name.c_str());
             continue;

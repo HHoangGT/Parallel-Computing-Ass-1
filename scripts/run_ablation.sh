@@ -1,21 +1,9 @@
 #!/usr/bin/env bash
-# Ablation studies for the report. Each condition reuses run_all.sh and writes to
-# benchmarks/<part>/<MACHINE>__<condition>/ so it can be compared with the baseline folder.
-#
-#   MACHINE=mac-m4      ./scripts/run_ablation.sh padding seqcst backoff
-#   MACHINE=linux-a6000 ./scripts/run_ablation.sh placement padding
-#   MACHINE=linux-h200  ./scripts/run_ablation.sh placement
-#
-# Studies:
-#   padding    build with -DCACHE_LINE=8 (no padding -> false sharing), short CS (n=101) locks + barrier
-#   seqcst     build with -DSEQ_CST=ON (every memory order seq_cst), same workload
-#   backoff    max_delay sweep with sleep_for(ns) backoff (--sleep 1); the baseline has the spin version
-#   placement  Linux only: same thread count T pinned 4 ways with numactl --physcpubind:
-#              1s-nosmt (1 socket, 1 thread/core), 1s-smt (1 socket, both SMT siblings),
-#              2s-nosmt (both sockets, 1 thread/core), 2s-smt (both sockets, both siblings)
-#   (CS length needs no extra run: the baseline covers n = 101, 1009 (locks_shortcs) and 10007 (locks).)
-# Knobs: MACHINE, REPS (3), TIMEOUT (60), T (placement thread count; default = cores per socket),
-#        ABL_THREADS (thread counts for padding/seqcst), ABL_LOCKS.
+# Ablations; each writes to benchmarks/<part>/<MACHINE>__<condition>/.
+#   MACHINE=linux-a6000 ./scripts/run_ablation.sh placement padding seqcst backoff
+# padding: -DCACHE_LINE=8; seqcst: -DSEQ_CST=ON; backoff: sleep_for backoff;
+# placement (Linux): T threads pinned to 1 or 2 sockets, with or without SMT siblings.
+# Knobs: MACHINE, REPS (3), TIMEOUT (60), T, ABL_THREADS, ABL_LOCKS.
 set -u
 cd "$(dirname "$0")/.."
 MACHINE=${MACHINE:?set MACHINE, e.g. linux-a6000}

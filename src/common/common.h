@@ -31,9 +31,7 @@ unsigned hw_threads();
 
 void start_watchdog(double seconds, std::string message);
 
-// Starts n threads, waits until all of them are running, then times only body(tid) on all threads
-// (from a common start signal until the last join). Thread creation is excluded, and no thread gets
-// a head start running uncontended while later threads are still being created.
+// Times body(tid) on n threads from a common start signal; thread creation is not timed.
 template <class F>
 double run_threads_timed(int n, F body) {
     std::atomic<int> ready{0};

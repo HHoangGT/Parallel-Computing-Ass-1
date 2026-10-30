@@ -66,8 +66,7 @@ int main(int argc, char** argv) {
     MPI_Win_lock_all(0, win);
     MPI_Barrier(MPI_COMM_WORLD);
 
-    // Correctness check (slot verification, 2 barriers + RMA per episode) runs untimed first; the timed
-    // run then has exactly one barrier per episode and no work in between (assignment p.3 metric).
+    // Check correctness untimed first; the timed run has one barrier per episode.
     long errors = 0;
     double seconds;
     auto measure = [&](auto& barrier) {

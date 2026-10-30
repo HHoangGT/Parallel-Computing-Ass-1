@@ -14,7 +14,6 @@
 #include "backoff.h"
 #include "mem_order.h"
 
-// TAS (slide 03a p17): acquire = exchange(true, acquire) ~ fence(R||RW); release = store(false, release) ~ RW||.
 class TASLock {
     alignas(CACHE_LINE) std::atomic<bool> locked{false};
 
@@ -25,7 +24,6 @@ public:
     void release() { locked.store(false, mo_release); }
 };
 
-// TTAS (03a p18): spin on a relaxed load served from the local cache; exchange only when the lock looks free.
 class TTASLock {
     alignas(CACHE_LINE) std::atomic<bool> locked{false};
 
@@ -37,7 +35,6 @@ public:
     void release() { locked.store(false, mo_release); }
 };
 
-// TAS + exponential backoff (03b p4; assignment p2): wait before retrying after a failed exchange.
 class TASBackoffLock {
     alignas(CACHE_LINE) std::atomic<bool> locked{false};
 
@@ -49,7 +46,6 @@ public:
     void release() { locked.store(false, mo_release); }
 };
 
-// TTAS + exponential backoff: back off only when the lock looked free but the exchange lost the race.
 class TTASBackoffLock {
     alignas(CACHE_LINE) std::atomic<bool> locked{false};
 
@@ -65,7 +61,6 @@ public:
     void release() { locked.store(false, mo_release); }
 };
 
-// Ticket lock (03a p19): FIFO-fair; next_ticket and now_serving on separate cache lines.
 class alignas(CACHE_LINE > 64 ? CACHE_LINE : 64) TicketLock {  // outer alignment kept for the nopad ablation
     alignas(CACHE_LINE) std::atomic<unsigned> next_ticket{0};
     alignas(CACHE_LINE) std::atomic<unsigned> now_serving{0};
@@ -80,9 +75,7 @@ public:
     }
 };
 
-// MCS queue lock (03a p22-27): each waiter spins on its own node; release subcase A = CAS(tail, me, null)
-// succeeds, subcase B = a successor swapped tail but has not linked yet, so wait for next. The qnode is
-// thread_local to keep acquire()/release() (03a p28), so a thread must not hold two MCS locks at once.
+// The qnode is thread_local, so a thread must not hold two MCS locks at once.
 struct alignas(CACHE_LINE) MCSNode {
     std::atomic<MCSNode*> next{nullptr};
     std::atomic<bool> wait{false};

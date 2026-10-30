@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Follow-up experiments chosen from the analysis of the baseline (see the report, Section 4).
+# Follow-up experiments.
 #   PLATFORM=linux-h200 ./scripts/followups.sh convoy ctxsw ttasbump
 # Output: benchmarks/followup/<PLATFORM>/<study>.csv
 set -u
@@ -74,9 +74,7 @@ for study in "$@"; do
         done
         echo "ttasbump: $lock"
       done ;;
-    interleave)  # Padding / memory-order A/B/C test with the builds interleaved round by round, so slow drift
-                 # (thermal, background load) hits every variant equally. std_mutex is the control: it is not
-                 # affected by CACHE_LINE or SEQ_CST, so its spread shows the noise floor.
+    interleave)  # builds interleaved per round so drift hits every variant; std_mutex is the control
       csv=$OUT/interleave.csv; echo "variant,round,lock,threads,iters,outside,n,rep,seconds" > "$csv"
       bcsv=$OUT/interleave_barrier.csv; echo "variant,round,barrier,threads,episodes,rep,seconds,episodes_per_sec" > "$bcsv"
       ROUNDS=${ROUNDS:-7}; ITHREADS=${ITHREADS:-"1 4 8 $NCPU"}
