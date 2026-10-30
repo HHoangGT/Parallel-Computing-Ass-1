@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Report campaign for one machine: baseline sweep, then the machine's ablations.
-#   ./scripts/campaign.sh mac-m4 | linux-a6000 | linux-h200
+#   ./scripts/campaign.sh mac-m4 | mac-m4pro | win-ultra7-255h | linux-a6000 | linux-h200
 set -u
 cd "$(dirname "$0")/.."
 M=$1
@@ -12,6 +12,12 @@ case $M in
   mac-m4)
     PLATFORM=$M PARTS="locks shortcs backoff barrier mpi" MPI_PROCS="2 4 8 16" ./scripts/run_all.sh
     REPS=3 MACHINE=$M ./scripts/run_ablation.sh padding seqcst backoff ;;
+  mac-m4pro)        # Parts 1-3 and the Mac ablations; Part 4 stays on mac-m4
+    PLATFORM=$M PARTS="locks shortcs backoff barrier counter fairness" ./scripts/run_all.sh
+    REPS=3 MACHINE=$M ./scripts/run_ablation.sh padding seqcst backoff
+    PLATFORM=$M ./scripts/followups.sh interleave joincost ;;
+  win-ultra7-255h)  # Part 3 only (Git Bash)
+    PLATFORM=$M PARTS="counter fairness" ./scripts/run_all.sh ;;
   linux-a6000)
     PLATFORM=$M PARTS="locks shortcs barrier mpi" THREADS="1 2 4 8 12 16 24 32 48 64 96 144" \
       ITERS=300 OWS="0 2 8" SHORT_ITERS=5000 EPISODES=20000 MPI_PROCS="2 4 8 16" ./scripts/run_all.sh
