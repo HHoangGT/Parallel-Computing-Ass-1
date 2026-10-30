@@ -170,9 +170,9 @@ if has mpi && command -v mpirun >/dev/null && [ -x "$BUILD/mpi_lock" ]; then
   for procs in $MPI_PROCS; do
     log_load "mpi:p=$procs" "$OUT"
     for rep in $(seq "$REPS"); do
-      for variant in faa cas cas_bo;  do $MPIRUN -np $procs "$BUILD"/mpi_counter --variant $variant --ops 20000 --timeout "$TIMEOUT" 2>/dev/null | tail -1 >> "$counter_csv"; done
-      for variant in tas mcs winlock; do $MPIRUN -np $procs "$BUILD"/mpi_lock --variant $variant --iters 10000 --timeout "$TIMEOUT" 2>/dev/null | tail -1 >> "$lock_csv"; done
-      for variant in sr sr_bo mpi;       do $MPIRUN -np $procs "$BUILD"/mpi_barrier --variant $variant --episodes 5000 --check 1 --timeout "$TIMEOUT" 2>/dev/null | tail -1 >> "$barrier_csv"; done
+      for variant in faa cas cas_bo;  do $MPIRUN -np $procs "$BUILD"/mpi_counter --variant $variant --ops 20000 --timeout "$TIMEOUT" </dev/null 2>/dev/null | tail -1 >> "$counter_csv"; done
+      for variant in tas mcs winlock; do $MPIRUN -np $procs "$BUILD"/mpi_lock --variant $variant --iters 10000 --timeout "$TIMEOUT" </dev/null 2>/dev/null | tail -1 >> "$lock_csv"; done
+      for variant in sr sr_bo mpi;       do $MPIRUN -np $procs "$BUILD"/mpi_barrier --variant $variant --episodes 5000 --check 1 --timeout "$TIMEOUT" </dev/null 2>/dev/null | tail -1 >> "$barrier_csv"; done
     done
     echo "mpi: p=$procs"
   done
