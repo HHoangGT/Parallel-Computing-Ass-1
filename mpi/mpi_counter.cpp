@@ -20,7 +20,8 @@ int main(int argc, char** argv) {
     long ops = args.geti("ops", 20000);
 
     std::string row = variant + "," + std::to_string(nprocs) + "," + std::to_string(ops) + ",TIMEOUT,0,timeout";
-    start_watchdog(args.geti("timeout", 60), rank == 0 ? row : "");
+    // rank 0 prints the TIMEOUT row and exits first; other ranks only fire 5 s later as a fallback
+    start_watchdog(args.geti("timeout", 60) + (rank == 0 ? 0 : 5), rank == 0 ? row : "");
 
     long* base;
     MPI_Win win;

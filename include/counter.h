@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "backoff.h"
+#include "mem_order.h"
 #include "locks.h"
 
 template <class Lock>
@@ -33,12 +34,12 @@ class CasCounter {
 
 public:
     long get_next_value() {
-        long old = ctr_.load(std::memory_order_relaxed);
-        while (!ctr_.compare_exchange_weak(old, old + 1, std::memory_order_relaxed,
-                                           std::memory_order_relaxed)) {}
+        long old = ctr_.load(mo_relaxed);
+        while (!ctr_.compare_exchange_weak(old, old + 1, mo_relaxed,
+                                           mo_relaxed)) {}
         return old;
     }
-    long get() const { return ctr_.load(std::memory_order_relaxed); }
+    long get() const { return ctr_.load(mo_relaxed); }
 };
 
 class CasBackoffCounter {
@@ -47,21 +48,21 @@ class CasBackoffCounter {
 public:
     long get_next_value() {
         ExpBackoff backoff;
-        long old = ctr_.load(std::memory_order_relaxed);
-        while (!ctr_.compare_exchange_weak(old, old + 1, std::memory_order_relaxed,
-                                           std::memory_order_relaxed))
+        long old = ctr_.load(mo_relaxed);
+        while (!ctr_.compare_exchange_weak(old, old + 1, mo_relaxed,
+                                           mo_relaxed))
             backoff.pause();
         return old;
     }
-    long get() const { return ctr_.load(std::memory_order_relaxed); }
+    long get() const { return ctr_.load(mo_relaxed); }
 };
 
 class FaaCounter {
     alignas(CACHE_LINE) std::atomic<long> ctr_{0};
 
 public:
-    long get_next_value() { return ctr_.fetch_add(1, std::memory_order_relaxed); }
-    long get() const { return ctr_.load(std::memory_order_relaxed); }
+    long get_next_value() { return ctr_.fetch_add(1, mo_relaxed); }
+    long get() const { return ctr_.load(mo_relaxed); }
 };
 
 class ShardedCounter {
@@ -73,7 +74,7 @@ class ShardedCounter {
 
     static int my_slot(int nshards) {
         static std::atomic<int> next_id{0};
-        static thread_local int id = next_id.fetch_add(1, std::memory_order_relaxed);
+        static thread_local int id = next_id.fetch_add(1, mo_relaxed);
         return id % nshards;
     }
 
@@ -83,11 +84,11 @@ public:
     long get_next_value() {
         // fetch_add, not load + store: the slot is uncontended in the normal case (one thread per
         // slot), so this costs about the same, but it stays correct if two threads ever share a slot.
-        return slots_[my_slot(nshards_)].value.fetch_add(1, std::memory_order_relaxed);
+        return slots_[my_slot(nshards_)].value.fetch_add(1, mo_relaxed);
     }
     long get() const {
         long sum = 0;
-        for (int i = 0; i < nshards_; ++i) sum += slots_[i].value.load(std::memory_order_relaxed);
+        for (int i = 0; i < nshards_; ++i) sum += slots_[i].value.load(mo_relaxed);
         return sum;
     }
 };

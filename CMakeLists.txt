@@ -13,6 +13,7 @@ endif()
 option(TSAN "Build with ThreadSanitizer" OFF)
 option(WITH_OPENMP "Build the OpenMP lock and barrier baselines" ON)
 option(WITH_MPI "Build the Part 4 MPI programs" ON)
+option(SEQ_CST "Ablation: make every memory order in locks, barrier and counters seq_cst" OFF)
 
 include(cmake/CompilerOptions.cmake)
 
@@ -24,6 +25,10 @@ file(GLOB common_sources CONFIGURE_DEPENDS src/common/*.cpp)
 add_library(common STATIC ${common_sources})
 target_include_directories(common PUBLIC include src)
 target_compile_definitions(common PUBLIC CACHE_LINE=${CACHE_LINE})
+if(SEQ_CST)
+  target_compile_definitions(common PUBLIC ASM1_SEQ_CST)
+  message(STATUS "SEQ_CST ablation: all memory orders are seq_cst")
+endif()
 target_link_libraries(common PUBLIC Threads::Threads)
 
 if(WITH_OPENMP AND NOT TSAN)

@@ -59,7 +59,8 @@ int main(int argc, char** argv) {
     long iters = args.geti("iters", 2000);
 
     std::string row = variant + "," + std::to_string(nprocs) + "," + std::to_string(iters) + ",TIMEOUT,0,timeout";
-    start_watchdog(args.geti("timeout", 60), rank == 0 ? row : "");
+    // rank 0 prints the TIMEOUT row and exits first; other ranks only fire 5 s later as a fallback
+    start_watchdog(args.geti("timeout", 60) + (rank == 0 ? 0 : 5), rank == 0 ? row : "");
 
     int* base;
     MPI_Win win;
@@ -81,6 +82,9 @@ int main(int argc, char** argv) {
             MPI_Win_unlock(0, win);
         }
         seconds = MPI_Wtime() - start;
+        // Only after every rank has left its MPI_Win_lock(EXCLUSIVE) loop may a rank take the shared
+        // lock_all epoch; taking it earlier blocks the slower ranks' exclusive locks forever.
+        MPI_Barrier(MPI_COMM_WORLD);
         MPI_Win_lock_all(0, win);
     } else {
         MPI_Win_lock_all(0, win);
