@@ -42,6 +42,7 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
   execute_process(COMMAND xcrun -f clang OUTPUT_VARIABLE clang_bin OUTPUT_STRIP_TRAILING_WHITESPACE)
   get_filename_component(clang_dir "${clang_bin}" DIRECTORY)
   if(NOT EXISTS "${clang_dir}/../include/c++/v1/atomic")
-    add_compile_options(-nostdinc++ -isystem "${sdk}/usr/include/c++/v1")
+    # In CMAKE_CXX_FLAGS (not add_compile_options) so CMake's own try-compiles, e.g. FindMPI, see it too
+    string(APPEND CMAKE_CXX_FLAGS " -nostdinc++ -isystem ${sdk}/usr/include/c++/v1")
   endif()
 endif()

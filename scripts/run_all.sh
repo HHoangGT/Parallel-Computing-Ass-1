@@ -127,8 +127,10 @@ if has mpi && command -v mpirun >/dev/null && [ -x "$BUILD/mpi_lock" ]; then
   OUT=$(out_dir mpi)
   lock_csv=$OUT/mpi_lock.csv;       echo "lock,procs,iters_per_rank,seconds,acq_per_sec,correct" > "$lock_csv"
   barrier_csv=$OUT/mpi_barrier.csv; echo "barrier,procs,episodes,seconds,episodes_per_sec,correct" > "$barrier_csv"
+  counter_csv=$OUT/mpi_counter.csv; echo "counter,procs,ops_per_rank,seconds,mops_per_sec,correct" > "$counter_csv"
   for procs in 2 4 8 $NCPU; do
     for rep in $(seq "$REPS"); do
+      for variant in faa cas cas_bo;  do $MPIRUN -np $procs "$BUILD"/mpi_counter --variant $variant --ops 20000 --timeout "$TIMEOUT" 2>/dev/null | tail -1 >> "$counter_csv"; done
       for variant in tas mcs winlock; do $MPIRUN -np $procs "$BUILD"/mpi_lock --variant $variant --iters 10000 --timeout "$TIMEOUT" 2>/dev/null | tail -1 >> "$lock_csv"; done
       for variant in sr_bo mpi;       do $MPIRUN -np $procs "$BUILD"/mpi_barrier --variant $variant --episodes 5000 --check 1 --timeout "$TIMEOUT" 2>/dev/null | tail -1 >> "$barrier_csv"; done
     done

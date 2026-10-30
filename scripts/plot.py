@@ -172,7 +172,8 @@ def plot_counter(plat_dir, read, summary, name, ncpu):
 
 
 def plot_mpi(plat_dir, read, summary, name, ncpu):
-    parts = [("mpi_lock.csv", "lock", "acq_per_sec", "lock acquisitions/s"),
+    parts = [("mpi_counter.csv", "counter", "mops_per_sec", "M ops/s"),
+             ("mpi_lock.csv", "lock", "acq_per_sec", "lock acquisitions/s"),
              ("mpi_barrier.csv", "barrier", "episodes_per_sec", "episodes/s")]
     present = [part for part in parts if (plat_dir / part[0]).exists()]
     if not present:

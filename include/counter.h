@@ -81,10 +81,9 @@ public:
     explicit ShardedCounter(int nshards) : slots_(new Slot[nshards]), nshards_(nshards) {}
 
     long get_next_value() {
-        std::atomic<long>& slot = slots_[my_slot(nshards_)].value;
-        long old = slot.load(std::memory_order_relaxed);
-        slot.store(old + 1, std::memory_order_relaxed);
-        return old;
+        // fetch_add, not load + store: the slot is uncontended in the normal case (one thread per
+        // slot), so this costs about the same, but it stays correct if two threads ever share a slot.
+        return slots_[my_slot(nshards_)].value.fetch_add(1, std::memory_order_relaxed);
     }
     long get() const {
         long sum = 0;

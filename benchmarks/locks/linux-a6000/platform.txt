@@ -1,0 +1,15 @@
+platform: linux-a6000
+date: Wed Oct 28 06:10:18 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+threads_swept: 1 2 4 8 12 16 24 32 48 64 96 144

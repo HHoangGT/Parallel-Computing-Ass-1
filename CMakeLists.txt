@@ -27,6 +27,16 @@ target_compile_definitions(common PUBLIC CACHE_LINE=${CACHE_LINE})
 target_link_libraries(common PUBLIC Threads::Threads)
 
 if(WITH_OPENMP AND NOT TSAN)
+  if(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+    # Apple clang has no -fopenmp driver flag; point FindOpenMP at Homebrew's libomp.
+    execute_process(COMMAND brew --prefix libomp OUTPUT_VARIABLE libomp_prefix RESULT_VARIABLE brew_status
+                    OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET)
+    if(brew_status EQUAL 0 AND EXISTS "${libomp_prefix}/lib/libomp.dylib")
+      set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${libomp_prefix}/include")
+      set(OpenMP_CXX_LIB_NAMES omp)
+      set(OpenMP_omp_LIBRARY "${libomp_prefix}/lib/libomp.dylib")
+    endif()
+  endif()
   find_package(OpenMP COMPONENTS CXX)
   if(OpenMP_CXX_FOUND)
     target_link_libraries(common PUBLIC OpenMP::OpenMP_CXX)
