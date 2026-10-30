@@ -44,7 +44,7 @@ PLATFORM=mac-m4pro ./scripts/run_all.sh
 ```
 
 ```bash
-uv run scripts/plot.py
+uv sync && uv run scripts/plot.py
 ```
 
 `run_all.sh` builds `./build` if needed and writes `benchmarks/<part>/<platform>/*.csv` and `platform.txt`; `PARTS` entries map to folders as locks, shortcs, backoff -> `locks`, barrier -> `barrier`, counter, fairness -> `counter`, mpi -> `mpi`. Knobs: `PARTS` (default `locks shortcs backoff barrier counter fairness mpi`), `THREADS`, `REPS`, `TIMEOUT`, `TOTAL`, `FAIR_SECONDS`, `BUILD`. `plot.py` writes `fig_*.png` and `summary.md` next to each CSV (medians over repetitions).
