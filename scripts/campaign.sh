@@ -12,18 +12,14 @@ case $M in
   mac-m4)
     PLATFORM=$M PARTS="locks shortcs backoff barrier mpi" MPI_PROCS="2 4 8 16" ./scripts/run_all.sh
     REPS=3 MACHINE=$M ./scripts/run_ablation.sh padding seqcst backoff ;;
-  mac-m4pro)        # Parts 1-3 and the Mac ablations; Part 4 stays on mac-m4
-    PLATFORM=$M PARTS="locks shortcs backoff barrier counter fairness" ./scripts/run_all.sh
-    REPS=3 MACHINE=$M ./scripts/run_ablation.sh padding seqcst backoff
-    PLATFORM=$M ./scripts/followups.sh interleave joincost ;;
-  win-ultra7-255h)  # Parts 1-3 (Git Bash)
-    PLATFORM=$M PARTS="locks shortcs backoff barrier counter fairness" ./scripts/run_all.sh ;;
+  mac-m4pro | win-ultra7-255h)  # Part 3 only (Windows: Git Bash)
+    PLATFORM=$M PARTS="counter fairness" ./scripts/run_all.sh ;;
   linux-a6000)
     PLATFORM=$M PARTS="locks shortcs barrier counter fairness mpi" THREADS="1 2 4 8 12 16 24 32 48 64 96 144" \
       ITERS=300 OWS="0 2 8" SHORT_ITERS=5000 EPISODES=20000 MPI_PROCS="2 4 8 16" ./scripts/run_all.sh
     REPS=3 SHORT_ITERS=5000 EPISODES=20000 MACHINE=$M ./scripts/run_ablation.sh placement padding seqcst ;;
   linux-h200)
-    PLATFORM=$M PARTS="locks shortcs barrier counter fairness mpi" THREADS="1 2 4 8 16 32 64 128 256 384 512" \
+    PLATFORM=$M PARTS="locks shortcs barrier mpi" THREADS="1 2 4 8 16 32 64 128 256 384 512" \
       ITERS=100 OWS="0 2 8" SHORT_ITERS=2000 EPISODES=10000 MPI_PROCS="2 4 8 16" TIMEOUT=45 ./scripts/run_all.sh
     REPS=3 SHORT_ITERS=2000 EPISODES=10000 TIMEOUT=45 MACHINE=$M ./scripts/run_ablation.sh placement ;;
   *) echo "unknown machine $M"; exit 1 ;;
