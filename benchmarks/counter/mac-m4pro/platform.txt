@@ -1,0 +1,10 @@
+platform: mac-m4pro
+date: Fri Oct 30 13:16:43 +07 2026
+uname: Darwin Hoangs-MacBook-Pro.local 27.2.0 Darwin Kernel Version 27.2.0: Wed Oct 14 23:44:56 PDT 2026; root:xnu-13432.41.4~25/RELEASE_ARM64_T6041 arm64
+logical_cpus: 12
+macos: 27.2
+cpu: Apple M4 Pro
+perf_cores: 8  efficiency_cores: 4
+memory_bytes: 25769803776
+compiler: Homebrew clang version 23.1.4
+threads_swept: 1 2 4 6 8 10 12 18 24
