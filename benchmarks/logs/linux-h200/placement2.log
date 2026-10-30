@@ -1,0 +1,14 @@
+placement2: round 1 1s-nosmt busy_pinned=31
+placement2: round 1 1s-smt busy_pinned=18
+placement2: round 1 2s-nosmt busy_pinned=7
+placement2: round 1 2s-smt busy_pinned=5
+placement2: round 2 1s-nosmt busy_pinned=6
+placement2: round 2 1s-smt busy_pinned=2
+placement2: round 2 2s-nosmt busy_pinned=5
+placement2: round 2 2s-smt busy_pinned=3
+placement2: round 3 1s-nosmt busy_pinned=8
+placement2: round 3 1s-smt busy_pinned=3
+placement2: round 3 2s-nosmt busy_pinned=5
+placement2: round 3 2s-smt busy_pinned=6
+followups done -> benchmarks/followup/linux-h200
+PLACEMENT2_DONE

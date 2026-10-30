@@ -20,6 +20,7 @@ inline void cpu_relax() { asm volatile("yield" ::: "memory"); }
 inline void cpu_relax() {}
 #endif
 
+// Exponential backoff with jitter. use_sleep calls sleep_for; otherwise cpu_relax() spins.
 struct BackoffConfig {
     static inline unsigned min_delay = 4;
     static inline unsigned max_delay = 1024;

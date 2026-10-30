@@ -21,6 +21,7 @@ endif()
 option(TSAN "Build with ThreadSanitizer" OFF)
 option(WITH_OPENMP "Build the OpenMP lock and barrier baselines" ON)
 option(WITH_MPI "Build the Part 4 MPI programs" ON)
+option(SEQ_CST "Ablation: make every memory order in locks, barrier and counters seq_cst" OFF)
 
 include(cmake/CompilerOptions.cmake)
 
@@ -32,10 +33,24 @@ file(GLOB common_sources CONFIGURE_DEPENDS src/common/*.cpp)
 add_library(common STATIC ${common_sources})
 target_include_directories(common PUBLIC include src)
 target_compile_definitions(common PUBLIC CACHE_LINE=${CACHE_LINE})
+if(SEQ_CST)
+  target_compile_definitions(common PUBLIC ASM1_SEQ_CST)
+  message(STATUS "SEQ_CST ablation: all memory orders are seq_cst")
+endif()
 target_link_libraries(common PUBLIC Threads::Threads)
 
 if(WITH_OPENMP AND NOT TSAN)
-  if(MSVC AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  if(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+    # Apple clang has no -fopenmp driver flag; point FindOpenMP at Homebrew's libomp.
+    execute_process(COMMAND brew --prefix libomp OUTPUT_VARIABLE libomp_prefix RESULT_VARIABLE brew_status
+                    OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET)
+    if(brew_status EQUAL 0 AND EXISTS "${libomp_prefix}/lib/libomp.dylib")
+      set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp -I${libomp_prefix}/include")
+      set(OpenMP_CXX_LIB_NAMES omp)
+      set(OpenMP_omp_LIBRARY "${libomp_prefix}/lib/libomp.dylib")
+    endif()
+  elseif(MSVC AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    # clang-cl on Windows: point FindOpenMP at the libomp shipped with LLVM.
     get_filename_component(llvm_bin ${CMAKE_CXX_COMPILER} DIRECTORY)
     set(OpenMP_CXX_FLAGS -openmp)
     set(OpenMP_CXX_LIB_NAMES libomp)

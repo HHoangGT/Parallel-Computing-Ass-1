@@ -1,0 +1,516 @@
+platform: linux-h200
+date: Fri Oct 30 09:07:03 AM UTC 2026
+uname: Linux namih200001 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 512
+Model name:                              AMD EPYC 9754 128-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      128
+Socket(s):                               2
+L1d cache:                               8 MiB (256 instances)
+L2 cache:                                256 MiB (256 instances)
+L3 cache:                                512 MiB (32 instances)
+NUMA node(s):                            2
+MemTotal:       1584053800 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 1 2 4 8 16 32 64 128 256 384 512
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: none
+bench_args: none
+load1_at_start: 41.15
+locks: tas ow=0 t=1
+locks: tas ow=0 t=2
+locks: tas ow=0 t=4
+locks: tas ow=0 t=8
+locks: tas ow=0 t=16
+locks: tas ow=0 t=32
+locks: tas ow=0 t=64
+locks: tas ow=0 t=128
+locks: tas ow=0 t=256
+locks: tas ow=0 t=384
+locks: tas ow=0 t=512
+locks: tas ow=2 t=1
+locks: tas ow=2 t=2
+locks: tas ow=2 t=4
+locks: tas ow=2 t=8
+locks: tas ow=2 t=16
+locks: tas ow=2 t=32
+locks: tas ow=2 t=64
+locks: tas ow=2 t=128
+locks: tas ow=2 t=256
+locks: tas ow=2 t=384
+locks: tas ow=2 t=512
+locks: tas ow=8 t=1
+locks: tas ow=8 t=2
+locks: tas ow=8 t=4
+locks: tas ow=8 t=8
+locks: tas ow=8 t=16
+locks: tas ow=8 t=32
+locks: tas ow=8 t=64
+locks: tas ow=8 t=128
+locks: tas ow=8 t=256
+locks: tas ow=8 t=384
+locks: tas ow=8 t=512
+locks: ttas ow=0 t=1
+locks: ttas ow=0 t=2
+locks: ttas ow=0 t=4
+locks: ttas ow=0 t=8
+locks: ttas ow=0 t=16
+locks: ttas ow=0 t=32
+locks: ttas ow=0 t=64
+locks: ttas ow=0 t=128
+locks: ttas ow=0 t=256
+locks: ttas ow=0 t=384
+locks: ttas ow=0 t=512
+locks: ttas ow=2 t=1
+locks: ttas ow=2 t=2
+locks: ttas ow=2 t=4
+locks: ttas ow=2 t=8
+locks: ttas ow=2 t=16
+locks: ttas ow=2 t=32
+locks: ttas ow=2 t=64
+locks: ttas ow=2 t=128
+locks: ttas ow=2 t=256
+locks: ttas ow=2 t=384
+locks: ttas ow=2 t=512
+locks: ttas ow=8 t=1
+locks: ttas ow=8 t=2
+locks: ttas ow=8 t=4
+locks: ttas ow=8 t=8
+locks: ttas ow=8 t=16
+locks: ttas ow=8 t=32
+locks: ttas ow=8 t=64
+locks: ttas ow=8 t=128
+locks: ttas ow=8 t=256
+locks: ttas ow=8 t=384
+locks: ttas ow=8 t=512
+locks: tas_bo ow=0 t=1
+locks: tas_bo ow=0 t=2
+locks: tas_bo ow=0 t=4
+locks: tas_bo ow=0 t=8
+locks: tas_bo ow=0 t=16
+locks: tas_bo ow=0 t=32
+locks: tas_bo ow=0 t=64
+locks: tas_bo ow=0 t=128
+locks: tas_bo ow=0 t=256
+locks: tas_bo ow=0 t=384
+locks: tas_bo ow=0 t=512
+locks: tas_bo ow=2 t=1
+locks: tas_bo ow=2 t=2
+locks: tas_bo ow=2 t=4
+locks: tas_bo ow=2 t=8
+locks: tas_bo ow=2 t=16
+locks: tas_bo ow=2 t=32
+locks: tas_bo ow=2 t=64
+locks: tas_bo ow=2 t=128
+locks: tas_bo ow=2 t=256
+locks: tas_bo ow=2 t=384
+locks: tas_bo ow=2 t=512
+locks: tas_bo ow=8 t=1
+locks: tas_bo ow=8 t=2
+locks: tas_bo ow=8 t=4
+locks: tas_bo ow=8 t=8
+locks: tas_bo ow=8 t=16
+locks: tas_bo ow=8 t=32
+locks: tas_bo ow=8 t=64
+locks: tas_bo ow=8 t=128
+locks: tas_bo ow=8 t=256
+locks: tas_bo ow=8 t=384
+locks: tas_bo ow=8 t=512
+locks: ttas_bo ow=0 t=1
+locks: ttas_bo ow=0 t=2
+locks: ttas_bo ow=0 t=4
+locks: ttas_bo ow=0 t=8
+locks: ttas_bo ow=0 t=16
+locks: ttas_bo ow=0 t=32
+locks: ttas_bo ow=0 t=64
+locks: ttas_bo ow=0 t=128
+locks: ttas_bo ow=0 t=256
+locks: ttas_bo ow=0 t=384
+locks: ttas_bo ow=0 t=512
+locks: ttas_bo ow=2 t=1
+locks: ttas_bo ow=2 t=2
+locks: ttas_bo ow=2 t=4
+locks: ttas_bo ow=2 t=8
+locks: ttas_bo ow=2 t=16
+locks: ttas_bo ow=2 t=32
+locks: ttas_bo ow=2 t=64
+locks: ttas_bo ow=2 t=128
+locks: ttas_bo ow=2 t=256
+locks: ttas_bo ow=2 t=384
+locks: ttas_bo ow=2 t=512
+locks: ttas_bo ow=8 t=1
+locks: ttas_bo ow=8 t=2
+locks: ttas_bo ow=8 t=4
+locks: ttas_bo ow=8 t=8
+locks: ttas_bo ow=8 t=16
+locks: ttas_bo ow=8 t=32
+locks: ttas_bo ow=8 t=64
+locks: ttas_bo ow=8 t=128
+locks: ttas_bo ow=8 t=256
+locks: ttas_bo ow=8 t=384
+locks: ttas_bo ow=8 t=512
+locks: ticket ow=0 t=1
+locks: ticket ow=0 t=2
+locks: ticket ow=0 t=4
+locks: ticket ow=0 t=8
+locks: ticket ow=0 t=16
+locks: ticket ow=0 t=32
+locks: ticket ow=0 t=64
+locks: ticket ow=0 t=128
+locks: ticket ow=0 t=256
+locks: ticket ow=0 t=384
+locks: ticket ow=0 t=512
+locks: ticket ow=2 t=1
+locks: ticket ow=2 t=2
+locks: ticket ow=2 t=4
+locks: ticket ow=2 t=8
+locks: ticket ow=2 t=16
+locks: ticket ow=2 t=32
+locks: ticket ow=2 t=64
+locks: ticket ow=2 t=128
+locks: ticket ow=2 t=256
+locks: ticket ow=2 t=384
+locks: ticket ow=2 t=512
+locks: ticket ow=8 t=1
+locks: ticket ow=8 t=2
+locks: ticket ow=8 t=4
+locks: ticket ow=8 t=8
+locks: ticket ow=8 t=16
+locks: ticket ow=8 t=32
+locks: ticket ow=8 t=64
+locks: ticket ow=8 t=128
+locks: ticket ow=8 t=256
+locks: ticket ow=8 t=384
+locks: ticket ow=8 t=512
+locks: mcs ow=0 t=1
+locks: mcs ow=0 t=2
+locks: mcs ow=0 t=4
+locks: mcs ow=0 t=8
+locks: mcs ow=0 t=16
+locks: mcs ow=0 t=32
+locks: mcs ow=0 t=64
+locks: mcs ow=0 t=128
+locks: mcs ow=0 t=256
+locks: mcs ow=0 t=384
+locks: mcs ow=0 t=512
+locks: mcs ow=2 t=1
+locks: mcs ow=2 t=2
+locks: mcs ow=2 t=4
+locks: mcs ow=2 t=8
+locks: mcs ow=2 t=16
+locks: mcs ow=2 t=32
+locks: mcs ow=2 t=64
+locks: mcs ow=2 t=128
+locks: mcs ow=2 t=256
+locks: mcs ow=2 t=384
+locks: mcs ow=2 t=512
+locks: mcs ow=8 t=1
+locks: mcs ow=8 t=2
+locks: mcs ow=8 t=4
+locks: mcs ow=8 t=8
+locks: mcs ow=8 t=16
+locks: mcs ow=8 t=32
+locks: mcs ow=8 t=64
+locks: mcs ow=8 t=128
+locks: mcs ow=8 t=256
+locks: mcs ow=8 t=384
+locks: mcs ow=8 t=512
+locks: std_mutex ow=0 t=1
+locks: std_mutex ow=0 t=2
+locks: std_mutex ow=0 t=4
+locks: std_mutex ow=0 t=8
+locks: std_mutex ow=0 t=16
+locks: std_mutex ow=0 t=32
+locks: std_mutex ow=0 t=64
+locks: std_mutex ow=0 t=128
+locks: std_mutex ow=0 t=256
+locks: std_mutex ow=0 t=384
+locks: std_mutex ow=0 t=512
+locks: std_mutex ow=2 t=1
+locks: std_mutex ow=2 t=2
+locks: std_mutex ow=2 t=4
+locks: std_mutex ow=2 t=8
+locks: std_mutex ow=2 t=16
+locks: std_mutex ow=2 t=32
+locks: std_mutex ow=2 t=64
+locks: std_mutex ow=2 t=128
+locks: std_mutex ow=2 t=256
+locks: std_mutex ow=2 t=384
+locks: std_mutex ow=2 t=512
+locks: std_mutex ow=8 t=1
+locks: std_mutex ow=8 t=2
+locks: std_mutex ow=8 t=4
+locks: std_mutex ow=8 t=8
+locks: std_mutex ow=8 t=16
+locks: std_mutex ow=8 t=32
+locks: std_mutex ow=8 t=64
+locks: std_mutex ow=8 t=128
+locks: std_mutex ow=8 t=256
+locks: std_mutex ow=8 t=384
+locks: std_mutex ow=8 t=512
+locks: pthread ow=0 t=1
+locks: pthread ow=0 t=2
+locks: pthread ow=0 t=4
+locks: pthread ow=0 t=8
+locks: pthread ow=0 t=16
+locks: pthread ow=0 t=32
+locks: pthread ow=0 t=64
+locks: pthread ow=0 t=128
+locks: pthread ow=0 t=256
+locks: pthread ow=0 t=384
+locks: pthread ow=0 t=512
+locks: pthread ow=2 t=1
+locks: pthread ow=2 t=2
+locks: pthread ow=2 t=4
+locks: pthread ow=2 t=8
+locks: pthread ow=2 t=16
+locks: pthread ow=2 t=32
+locks: pthread ow=2 t=64
+locks: pthread ow=2 t=128
+locks: pthread ow=2 t=256
+locks: pthread ow=2 t=384
+locks: pthread ow=2 t=512
+locks: pthread ow=8 t=1
+locks: pthread ow=8 t=2
+locks: pthread ow=8 t=4
+locks: pthread ow=8 t=8
+locks: pthread ow=8 t=16
+locks: pthread ow=8 t=32
+locks: pthread ow=8 t=64
+locks: pthread ow=8 t=128
+locks: pthread ow=8 t=256
+locks: pthread ow=8 t=384
+locks: pthread ow=8 t=512
+locks: omp ow=0 t=1
+locks: omp ow=0 t=2
+locks: omp ow=0 t=4
+locks: omp ow=0 t=8
+locks: omp ow=0 t=16
+locks: omp ow=0 t=32
+locks: omp ow=0 t=64
+locks: omp ow=0 t=128
+locks: omp ow=0 t=256
+locks: omp ow=0 t=384
+locks: omp ow=0 t=512
+locks: omp ow=2 t=1
+locks: omp ow=2 t=2
+locks: omp ow=2 t=4
+locks: omp ow=2 t=8
+locks: omp ow=2 t=16
+locks: omp ow=2 t=32
+locks: omp ow=2 t=64
+locks: omp ow=2 t=128
+locks: omp ow=2 t=256
+locks: omp ow=2 t=384
+locks: omp ow=2 t=512
+locks: omp ow=8 t=1
+locks: omp ow=8 t=2
+locks: omp ow=8 t=4
+locks: omp ow=8 t=8
+locks: omp ow=8 t=16
+locks: omp ow=8 t=32
+locks: omp ow=8 t=64
+locks: omp ow=8 t=128
+locks: omp ow=8 t=256
+locks: omp ow=8 t=384
+locks: omp ow=8 t=512
+shortcs: n=1009 tas
+shortcs: n=1009 ttas
+shortcs: n=1009 tas_bo
+shortcs: n=1009 ttas_bo
+shortcs: n=1009 ticket
+shortcs: n=1009 mcs
+shortcs: n=1009 std_mutex
+shortcs: n=1009 pthread
+shortcs: n=1009 omp
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+shortcs: n=101 pthread
+shortcs: n=101 omp
+barrier: sr t=1
+barrier: sr t=2
+barrier: sr t=4
+barrier: sr t=8
+barrier: sr t=16
+barrier: sr t=32
+barrier: sr t=64
+barrier: sr t=128
+barrier: sr t=256
+barrier: sr t=384
+barrier: sr t=512
+barrier: sr_bo t=1
+barrier: sr_bo t=2
+barrier: sr_bo t=4
+barrier: sr_bo t=8
+barrier: sr_bo t=16
+barrier: sr_bo t=32
+barrier: sr_bo t=64
+barrier: sr_bo t=128
+barrier: sr_bo t=256
+barrier: sr_bo t=384
+barrier: sr_bo t=512
+barrier: std t=1
+barrier: std t=2
+barrier: std t=4
+barrier: std t=8
+barrier: std t=16
+barrier: std t=32
+barrier: std t=64
+barrier: std t=128
+barrier: std t=256
+barrier: std t=384
+barrier: std t=512
+barrier: omp t=1
+barrier: omp t=2
+barrier: omp t=4
+barrier: omp t=8
+barrier: omp t=16
+barrier: omp t=32
+barrier: omp t=64
+barrier: omp t=128
+barrier: omp t=256
+barrier: omp t=384
+barrier: omp t=512
+barrier: pthread t=1
+barrier: pthread t=2
+barrier: pthread t=4
+barrier: pthread t=8
+barrier: pthread t=16
+barrier: pthread t=32
+barrier: pthread t=64
+barrier: pthread t=128
+barrier: pthread t=256
+barrier: pthread t=384
+barrier: pthread t=512
+mpi: p=2
+mpi: p=4
+mpi: p=8
+mpi: p=16
+done -> benchmarks/*/linux-h200
+placement 1s-nosmt: T=128 cpus=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127
+platform: linux-h200__placement-1s-nosmt
+date: Fri Oct 30 10:02:53 AM UTC 2026
+uname: Linux namih200001 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 512
+Model name:                              AMD EPYC 9754 128-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      128
+Socket(s):                               2
+L1d cache:                               8 MiB (256 instances)
+L2 cache:                                256 MiB (256 instances)
+L3 cache:                                512 MiB (32 instances)
+NUMA node(s):                            2
+MemTotal:       1584053800 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 128
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127
+bench_args: none
+load1_at_start: 42.69
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=128
+barrier: std t=128
+done -> benchmarks/*/linux-h200__placement-1s-nosmt
+placement 1s-smt: T=128 cpus=0,256,1,257,2,258,3,259,4,260,5,261,6,262,7,263,8,264,9,265,10,266,11,267,12,268,13,269,14,270,15,271,16,272,17,273,18,274,19,275,20,276,21,277,22,278,23,279,24,280,25,281,26,282,27,283,28,284,29,285,30,286,31,287,32,288,33,289,34,290,35,291,36,292,37,293,38,294,39,295,40,296,41,297,42,298,43,299,44,300,45,301,46,302,47,303,48,304,49,305,50,306,51,307,52,308,53,309,54,310,55,311,56,312,57,313,58,314,59,315,60,316,61,317,62,318,63,319
+platform: linux-h200__placement-1s-smt
+date: Fri Oct 30 10:03:12 AM UTC 2026
+uname: Linux namih200001 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 512
+Model name:                              AMD EPYC 9754 128-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      128
+Socket(s):                               2
+L1d cache:                               8 MiB (256 instances)
+L2 cache:                                256 MiB (256 instances)
+L3 cache:                                512 MiB (32 instances)
+NUMA node(s):                            2
+MemTotal:       1584053800 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 128
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,256,1,257,2,258,3,259,4,260,5,261,6,262,7,263,8,264,9,265,10,266,11,267,12,268,13,269,14,270,15,271,16,272,17,273,18,274,19,275,20,276,21,277,22,278,23,279,24,280,25,281,26,282,27,283,28,284,29,285,30,286,31,287,32,288,33,289,34,290,35,291,36,292,37,293,38,294,39,295,40,296,41,297,42,298,43,299,44,300,45,301,46,302,47,303,48,304,49,305,50,306,51,307,52,308,53,309,54,310,55,311,56,312,57,313,58,314,59,315,60,316,61,317,62,318,63,319
+bench_args: none
+load1_at_start: 69.18
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=128
+barrier: std t=128
+done -> benchmarks/*/linux-h200__placement-1s-smt
+placement 2s-nosmt: T=128 cpus=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191
+platform: linux-h200__placement-2s-nosmt
+date: Fri Oct 30 10:03:40 AM UTC 2026
+uname: Linux namih200001 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 512
+Model name:                              AMD EPYC 9754 128-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      128
+Socket(s):                               2
+L1d cache:                               8 MiB (256 instances)
+L2 cache:                                256 MiB (256 instances)
+L3 cache:                                512 MiB (32 instances)
+NUMA node(s):                            2
+MemTotal:       1584053800 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 128
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191
+bench_args: none
+load1_at_start: 91.99
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=128
+barrier: std t=128
+done -> benchmarks/*/linux-h200__placement-2s-nosmt
+placement 2s-smt: T=128 cpus=0,256,1,257,2,258,3,259,4,260,5,261,6,262,7,263,8,264,9,265,10,266,11,267,12,268,13,269,14,270,15,271,16,272,17,273,18,274,19,275,20,276,21,277,22,278,23,279,24,280,25,281,26,282,27,283,28,284,29,285,30,286,31,287,128,384,129,385,130,386,131,387,132,388,133,389,134,390,135,391,136,392,137,393,138,394,139,395,140,396,141,397,142,398,143,399,144,400,145,401,146,402,147,403,148,404,149,405,150,406,151,407,152,408,153,409,154,410,155,411,156,412,157,413,158,414,159,415
+platform: linux-h200__placement-2s-smt
+date: Fri Oct 30 10:03:55 AM UTC 2026
+uname: Linux namih200001 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 512
+Model name:                              AMD EPYC 9754 128-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      128
+Socket(s):                               2
+L1d cache:                               8 MiB (256 instances)
+L2 cache:                                256 MiB (256 instances)
+L3 cache:                                512 MiB (32 instances)
+NUMA node(s):                            2
+MemTotal:       1584053800 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 128
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,256,1,257,2,258,3,259,4,260,5,261,6,262,7,263,8,264,9,265,10,266,11,267,12,268,13,269,14,270,15,271,16,272,17,273,18,274,19,275,20,276,21,277,22,278,23,279,24,280,25,281,26,282,27,283,28,284,29,285,30,286,31,287,128,384,129,385,130,386,131,387,132,388,133,389,134,390,135,391,136,392,137,393,138,394,139,395,140,396,141,397,142,398,143,399,144,400,145,401,146,402,147,403,148,404,149,405,150,406,151,407,152,408,153,409,154,410,155,411,156,412,157,413,158,414,159,415
+bench_args: none
+load1_at_start: 96.14
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=128
+barrier: std t=128
+done -> benchmarks/*/linux-h200__placement-2s-smt
+ablations done -> benchmarks/*/linux-h200__*
+CAMPAIGN_DONE

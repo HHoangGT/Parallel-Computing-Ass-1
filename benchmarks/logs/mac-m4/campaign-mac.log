@@ -1,0 +1,543 @@
+
+EnvironmentNameNotFound: Could not find conda environment: asm1
+You can list all discoverable environments with `conda info --envs`.
+
+
+platform: mac-m4
+date: Fri Oct 30 16:06:38 +07 2026
+uname: Darwin HoangTrans-MacBook-Air.local 25.5.0 Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:22 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8132 arm64
+logical_cpus: 10
+macos: 26.5.2
+cpu: Apple M4
+perf_cores: 4  efficiency_cores: 6
+memory_bytes: 25769803776
+compiler: Apple clang version 16.0.0 (clang-1600.0.26.3)
+threads_swept: 1 2 4 6 8 10 15 20
+build: build  CACHE_LINE=128  SEQ_CST=OFF
+runner: none
+bench_args: none
+load1_at_start: 2.75
+locks: tas ow=0 t=1
+locks: tas ow=0 t=2
+locks: tas ow=0 t=4
+locks: tas ow=0 t=6
+locks: tas ow=0 t=8
+locks: tas ow=0 t=10
+locks: tas ow=0 t=15
+locks: tas ow=0 t=20
+locks: tas ow=1 t=1
+locks: tas ow=1 t=2
+locks: tas ow=1 t=4
+locks: tas ow=1 t=6
+locks: tas ow=1 t=8
+locks: tas ow=1 t=10
+locks: tas ow=1 t=15
+locks: tas ow=1 t=20
+locks: tas ow=2 t=1
+locks: tas ow=2 t=2
+locks: tas ow=2 t=4
+locks: tas ow=2 t=6
+locks: tas ow=2 t=8
+locks: tas ow=2 t=10
+locks: tas ow=2 t=15
+locks: tas ow=2 t=20
+locks: tas ow=4 t=1
+locks: tas ow=4 t=2
+locks: tas ow=4 t=4
+locks: tas ow=4 t=6
+locks: tas ow=4 t=8
+locks: tas ow=4 t=10
+locks: tas ow=4 t=15
+locks: tas ow=4 t=20
+locks: tas ow=8 t=1
+locks: tas ow=8 t=2
+locks: tas ow=8 t=4
+locks: tas ow=8 t=6
+locks: tas ow=8 t=8
+locks: tas ow=8 t=10
+locks: tas ow=8 t=15
+locks: tas ow=8 t=20
+locks: ttas ow=0 t=1
+locks: ttas ow=0 t=2
+locks: ttas ow=0 t=4
+locks: ttas ow=0 t=6
+locks: ttas ow=0 t=8
+locks: ttas ow=0 t=10
+locks: ttas ow=0 t=15
+locks: ttas ow=0 t=20
+locks: ttas ow=1 t=1
+locks: ttas ow=1 t=2
+locks: ttas ow=1 t=4
+locks: ttas ow=1 t=6
+locks: ttas ow=1 t=8
+locks: ttas ow=1 t=10
+locks: ttas ow=1 t=15
+locks: ttas ow=1 t=20
+locks: ttas ow=2 t=1
+locks: ttas ow=2 t=2
+locks: ttas ow=2 t=4
+locks: ttas ow=2 t=6
+locks: ttas ow=2 t=8
+locks: ttas ow=2 t=10
+locks: ttas ow=2 t=15
+locks: ttas ow=2 t=20
+locks: ttas ow=4 t=1
+locks: ttas ow=4 t=2
+locks: ttas ow=4 t=4
+locks: ttas ow=4 t=6
+locks: ttas ow=4 t=8
+locks: ttas ow=4 t=10
+locks: ttas ow=4 t=15
+locks: ttas ow=4 t=20
+locks: ttas ow=8 t=1
+locks: ttas ow=8 t=2
+locks: ttas ow=8 t=4
+locks: ttas ow=8 t=6
+locks: ttas ow=8 t=8
+locks: ttas ow=8 t=10
+locks: ttas ow=8 t=15
+locks: ttas ow=8 t=20
+locks: tas_bo ow=0 t=1
+locks: tas_bo ow=0 t=2
+locks: tas_bo ow=0 t=4
+locks: tas_bo ow=0 t=6
+locks: tas_bo ow=0 t=8
+locks: tas_bo ow=0 t=10
+locks: tas_bo ow=0 t=15
+locks: tas_bo ow=0 t=20
+locks: tas_bo ow=1 t=1
+locks: tas_bo ow=1 t=2
+locks: tas_bo ow=1 t=4
+locks: tas_bo ow=1 t=6
+locks: tas_bo ow=1 t=8
+locks: tas_bo ow=1 t=10
+locks: tas_bo ow=1 t=15
+locks: tas_bo ow=1 t=20
+locks: tas_bo ow=2 t=1
+locks: tas_bo ow=2 t=2
+locks: tas_bo ow=2 t=4
+locks: tas_bo ow=2 t=6
+locks: tas_bo ow=2 t=8
+locks: tas_bo ow=2 t=10
+locks: tas_bo ow=2 t=15
+locks: tas_bo ow=2 t=20
+locks: tas_bo ow=4 t=1
+locks: tas_bo ow=4 t=2
+locks: tas_bo ow=4 t=4
+locks: tas_bo ow=4 t=6
+locks: tas_bo ow=4 t=8
+locks: tas_bo ow=4 t=10
+locks: tas_bo ow=4 t=15
+locks: tas_bo ow=4 t=20
+locks: tas_bo ow=8 t=1
+locks: tas_bo ow=8 t=2
+locks: tas_bo ow=8 t=4
+locks: tas_bo ow=8 t=6
+locks: tas_bo ow=8 t=8
+locks: tas_bo ow=8 t=10
+locks: tas_bo ow=8 t=15
+locks: tas_bo ow=8 t=20
+locks: ttas_bo ow=0 t=1
+locks: ttas_bo ow=0 t=2
+locks: ttas_bo ow=0 t=4
+locks: ttas_bo ow=0 t=6
+locks: ttas_bo ow=0 t=8
+locks: ttas_bo ow=0 t=10
+locks: ttas_bo ow=0 t=15
+locks: ttas_bo ow=0 t=20
+locks: ttas_bo ow=1 t=1
+locks: ttas_bo ow=1 t=2
+locks: ttas_bo ow=1 t=4
+locks: ttas_bo ow=1 t=6
+locks: ttas_bo ow=1 t=8
+locks: ttas_bo ow=1 t=10
+locks: ttas_bo ow=1 t=15
+locks: ttas_bo ow=1 t=20
+locks: ttas_bo ow=2 t=1
+locks: ttas_bo ow=2 t=2
+locks: ttas_bo ow=2 t=4
+locks: ttas_bo ow=2 t=6
+locks: ttas_bo ow=2 t=8
+locks: ttas_bo ow=2 t=10
+locks: ttas_bo ow=2 t=15
+locks: ttas_bo ow=2 t=20
+locks: ttas_bo ow=4 t=1
+locks: ttas_bo ow=4 t=2
+locks: ttas_bo ow=4 t=4
+locks: ttas_bo ow=4 t=6
+locks: ttas_bo ow=4 t=8
+locks: ttas_bo ow=4 t=10
+locks: ttas_bo ow=4 t=15
+locks: ttas_bo ow=4 t=20
+locks: ttas_bo ow=8 t=1
+locks: ttas_bo ow=8 t=2
+locks: ttas_bo ow=8 t=4
+locks: ttas_bo ow=8 t=6
+locks: ttas_bo ow=8 t=8
+locks: ttas_bo ow=8 t=10
+locks: ttas_bo ow=8 t=15
+locks: ttas_bo ow=8 t=20
+locks: ticket ow=0 t=1
+locks: ticket ow=0 t=2
+locks: ticket ow=0 t=4
+locks: ticket ow=0 t=6
+locks: ticket ow=0 t=8
+locks: ticket ow=0 t=10
+locks: ticket ow=0 t=15
+locks: ticket ow=0 t=20
+locks: ticket ow=1 t=1
+locks: ticket ow=1 t=2
+locks: ticket ow=1 t=4
+locks: ticket ow=1 t=6
+locks: ticket ow=1 t=8
+locks: ticket ow=1 t=10
+locks: ticket ow=1 t=15
+locks: ticket ow=1 t=20
+locks: ticket ow=2 t=1
+locks: ticket ow=2 t=2
+locks: ticket ow=2 t=4
+locks: ticket ow=2 t=6
+locks: ticket ow=2 t=8
+locks: ticket ow=2 t=10
+locks: ticket ow=2 t=15
+locks: ticket ow=2 t=20
+locks: ticket ow=4 t=1
+locks: ticket ow=4 t=2
+locks: ticket ow=4 t=4
+locks: ticket ow=4 t=6
+locks: ticket ow=4 t=8
+locks: ticket ow=4 t=10
+locks: ticket ow=4 t=15
+locks: ticket ow=4 t=20
+locks: ticket ow=8 t=1
+locks: ticket ow=8 t=2
+locks: ticket ow=8 t=4
+locks: ticket ow=8 t=6
+locks: ticket ow=8 t=8
+locks: ticket ow=8 t=10
+locks: ticket ow=8 t=15
+locks: ticket ow=8 t=20
+locks: mcs ow=0 t=1
+locks: mcs ow=0 t=2
+locks: mcs ow=0 t=4
+locks: mcs ow=0 t=6
+locks: mcs ow=0 t=8
+locks: mcs ow=0 t=10
+locks: mcs ow=0 t=15
+locks: mcs ow=0 t=20
+locks: mcs ow=1 t=1
+locks: mcs ow=1 t=2
+locks: mcs ow=1 t=4
+locks: mcs ow=1 t=6
+locks: mcs ow=1 t=8
+locks: mcs ow=1 t=10
+locks: mcs ow=1 t=15
+locks: mcs ow=1 t=20
+locks: mcs ow=2 t=1
+locks: mcs ow=2 t=2
+locks: mcs ow=2 t=4
+locks: mcs ow=2 t=6
+locks: mcs ow=2 t=8
+locks: mcs ow=2 t=10
+locks: mcs ow=2 t=15
+locks: mcs ow=2 t=20
+locks: mcs ow=4 t=1
+locks: mcs ow=4 t=2
+locks: mcs ow=4 t=4
+locks: mcs ow=4 t=6
+locks: mcs ow=4 t=8
+locks: mcs ow=4 t=10
+locks: mcs ow=4 t=15
+locks: mcs ow=4 t=20
+locks: mcs ow=8 t=1
+locks: mcs ow=8 t=2
+locks: mcs ow=8 t=4
+locks: mcs ow=8 t=6
+locks: mcs ow=8 t=8
+locks: mcs ow=8 t=10
+locks: mcs ow=8 t=15
+locks: mcs ow=8 t=20
+locks: std_mutex ow=0 t=1
+locks: std_mutex ow=0 t=2
+locks: std_mutex ow=0 t=4
+locks: std_mutex ow=0 t=6
+locks: std_mutex ow=0 t=8
+locks: std_mutex ow=0 t=10
+locks: std_mutex ow=0 t=15
+locks: std_mutex ow=0 t=20
+locks: std_mutex ow=1 t=1
+locks: std_mutex ow=1 t=2
+locks: std_mutex ow=1 t=4
+locks: std_mutex ow=1 t=6
+locks: std_mutex ow=1 t=8
+locks: std_mutex ow=1 t=10
+locks: std_mutex ow=1 t=15
+locks: std_mutex ow=1 t=20
+locks: std_mutex ow=2 t=1
+locks: std_mutex ow=2 t=2
+locks: std_mutex ow=2 t=4
+locks: std_mutex ow=2 t=6
+locks: std_mutex ow=2 t=8
+locks: std_mutex ow=2 t=10
+locks: std_mutex ow=2 t=15
+locks: std_mutex ow=2 t=20
+locks: std_mutex ow=4 t=1
+locks: std_mutex ow=4 t=2
+locks: std_mutex ow=4 t=4
+locks: std_mutex ow=4 t=6
+locks: std_mutex ow=4 t=8
+locks: std_mutex ow=4 t=10
+locks: std_mutex ow=4 t=15
+locks: std_mutex ow=4 t=20
+locks: std_mutex ow=8 t=1
+locks: std_mutex ow=8 t=2
+locks: std_mutex ow=8 t=4
+locks: std_mutex ow=8 t=6
+locks: std_mutex ow=8 t=8
+locks: std_mutex ow=8 t=10
+locks: std_mutex ow=8 t=15
+locks: std_mutex ow=8 t=20
+locks: pthread ow=0 t=1
+locks: pthread ow=0 t=2
+locks: pthread ow=0 t=4
+locks: pthread ow=0 t=6
+locks: pthread ow=0 t=8
+locks: pthread ow=0 t=10
+locks: pthread ow=0 t=15
+locks: pthread ow=0 t=20
+locks: pthread ow=1 t=1
+locks: pthread ow=1 t=2
+locks: pthread ow=1 t=4
+locks: pthread ow=1 t=6
+locks: pthread ow=1 t=8
+locks: pthread ow=1 t=10
+locks: pthread ow=1 t=15
+locks: pthread ow=1 t=20
+locks: pthread ow=2 t=1
+locks: pthread ow=2 t=2
+locks: pthread ow=2 t=4
+locks: pthread ow=2 t=6
+locks: pthread ow=2 t=8
+locks: pthread ow=2 t=10
+locks: pthread ow=2 t=15
+locks: pthread ow=2 t=20
+locks: pthread ow=4 t=1
+locks: pthread ow=4 t=2
+locks: pthread ow=4 t=4
+locks: pthread ow=4 t=6
+locks: pthread ow=4 t=8
+locks: pthread ow=4 t=10
+locks: pthread ow=4 t=15
+locks: pthread ow=4 t=20
+locks: pthread ow=8 t=1
+locks: pthread ow=8 t=2
+locks: pthread ow=8 t=4
+locks: pthread ow=8 t=6
+locks: pthread ow=8 t=8
+locks: pthread ow=8 t=10
+locks: pthread ow=8 t=15
+locks: pthread ow=8 t=20
+locks: omp ow=0 t=1
+locks: omp ow=0 t=2
+locks: omp ow=0 t=4
+locks: omp ow=0 t=6
+locks: omp ow=0 t=8
+locks: omp ow=0 t=10
+locks: omp ow=0 t=15
+locks: omp ow=0 t=20
+locks: omp ow=1 t=1
+locks: omp ow=1 t=2
+locks: omp ow=1 t=4
+locks: omp ow=1 t=6
+locks: omp ow=1 t=8
+locks: omp ow=1 t=10
+locks: omp ow=1 t=15
+locks: omp ow=1 t=20
+locks: omp ow=2 t=1
+locks: omp ow=2 t=2
+locks: omp ow=2 t=4
+locks: omp ow=2 t=6
+locks: omp ow=2 t=8
+locks: omp ow=2 t=10
+locks: omp ow=2 t=15
+locks: omp ow=2 t=20
+locks: omp ow=4 t=1
+locks: omp ow=4 t=2
+locks: omp ow=4 t=4
+locks: omp ow=4 t=6
+locks: omp ow=4 t=8
+locks: omp ow=4 t=10
+locks: omp ow=4 t=15
+locks: omp ow=4 t=20
+locks: omp ow=8 t=1
+locks: omp ow=8 t=2
+locks: omp ow=8 t=4
+locks: omp ow=8 t=6
+locks: omp ow=8 t=8
+locks: omp ow=8 t=10
+locks: omp ow=8 t=15
+locks: omp ow=8 t=20
+shortcs: n=1009 tas
+shortcs: n=1009 ttas
+shortcs: n=1009 tas_bo
+shortcs: n=1009 ttas_bo
+shortcs: n=1009 ticket
+shortcs: n=1009 mcs
+shortcs: n=1009 std_mutex
+shortcs: n=1009 pthread
+shortcs: n=1009 omp
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+shortcs: n=101 pthread
+shortcs: n=101 omp
+backoff: tas_bo max_delay=16
+backoff: tas_bo max_delay=64
+backoff: tas_bo max_delay=256
+backoff: tas_bo max_delay=1024
+backoff: tas_bo max_delay=4096
+backoff: tas_bo max_delay=16384
+backoff: ttas_bo max_delay=16
+backoff: ttas_bo max_delay=64
+backoff: ttas_bo max_delay=256
+backoff: ttas_bo max_delay=1024
+backoff: ttas_bo max_delay=4096
+backoff: ttas_bo max_delay=16384
+barrier: sr t=1
+barrier: sr t=2
+barrier: sr t=4
+barrier: sr t=6
+barrier: sr t=8
+barrier: sr t=10
+barrier: sr t=15
+barrier: sr t=20
+barrier: sr_bo t=1
+barrier: sr_bo t=2
+barrier: sr_bo t=4
+barrier: sr_bo t=6
+barrier: sr_bo t=8
+barrier: sr_bo t=10
+barrier: sr_bo t=15
+barrier: sr_bo t=20
+barrier: std t=1
+barrier: std t=2
+barrier: std t=4
+barrier: std t=6
+barrier: std t=8
+barrier: std t=10
+barrier: std t=15
+barrier: std t=20
+barrier: omp t=1
+barrier: omp t=2
+barrier: omp t=4
+barrier: omp t=6
+barrier: omp t=8
+barrier: omp t=10
+barrier: omp t=15
+barrier: omp t=20
+mpi: p=2
+mpi: p=4
+mpi: p=8
+mpi: p=16
+done -> benchmarks/*/mac-m4
+platform: mac-m4__nopad
+date: Fri Oct 30 16:59:28 +07 2026
+uname: Darwin HoangTrans-MacBook-Air.local 25.5.0 Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:22 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8132 arm64
+logical_cpus: 10
+macos: 26.5.2
+cpu: Apple M4
+perf_cores: 4  efficiency_cores: 6
+memory_bytes: 25769803776
+compiler: Apple clang version 16.0.0 (clang-1600.0.26.3)
+threads_swept: 1 2 4 5 8 10 
+build: build-nopad  CACHE_LINE=8  SEQ_CST=OFF
+runner: none
+bench_args: none
+load1_at_start: 69.66
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=1
+barrier: sr t=2
+barrier: sr t=4
+barrier: sr t=5
+barrier: sr t=8
+barrier: sr t=10
+barrier: std t=1
+barrier: std t=2
+barrier: std t=4
+barrier: std t=5
+barrier: std t=8
+barrier: std t=10
+done -> benchmarks/*/mac-m4__nopad
+platform: mac-m4__seqcst
+date: Fri Oct 30 16:59:34 +07 2026
+uname: Darwin HoangTrans-MacBook-Air.local 25.5.0 Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:22 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8132 arm64
+logical_cpus: 10
+macos: 26.5.2
+cpu: Apple M4
+perf_cores: 4  efficiency_cores: 6
+memory_bytes: 25769803776
+compiler: Apple clang version 16.0.0 (clang-1600.0.26.3)
+threads_swept: 1 2 4 5 8 10 
+build: build-seqcst  CACHE_LINE=128  SEQ_CST=ON
+runner: none
+bench_args: none
+load1_at_start: 64.49
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=1
+barrier: sr t=2
+barrier: sr t=4
+barrier: sr t=5
+barrier: sr t=8
+barrier: sr t=10
+barrier: std t=1
+barrier: std t=2
+barrier: std t=4
+barrier: std t=5
+barrier: std t=8
+barrier: std t=10
+done -> benchmarks/*/mac-m4__seqcst
+platform: mac-m4__sleep
+date: Fri Oct 30 16:59:41 +07 2026
+uname: Darwin HoangTrans-MacBook-Air.local 25.5.0 Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:22 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8132 arm64
+logical_cpus: 10
+macos: 26.5.2
+cpu: Apple M4
+perf_cores: 4  efficiency_cores: 6
+memory_bytes: 25769803776
+compiler: Apple clang version 16.0.0 (clang-1600.0.26.3)
+threads_swept: 1 2 4 6 8 10 15 20
+build: build  CACHE_LINE=128  SEQ_CST=OFF
+runner: none
+bench_args: --sleep 1
+load1_at_start: 59.40
+backoff: tas_bo max_delay=16
+backoff: tas_bo max_delay=64
+backoff: tas_bo max_delay=256
+backoff: tas_bo max_delay=1024
+backoff: tas_bo max_delay=4096
+backoff: tas_bo max_delay=16384
+backoff: ttas_bo max_delay=16
+backoff: ttas_bo max_delay=64
+backoff: ttas_bo max_delay=256
+backoff: ttas_bo max_delay=1024
+backoff: ttas_bo max_delay=4096
+backoff: ttas_bo max_delay=16384
+done -> benchmarks/*/mac-m4__sleep
+ablations done -> benchmarks/*/mac-m4__*
+CAMPAIGN_DONE

@@ -5,8 +5,7 @@
 
 template <class Lock>
 double run_once(Lock& lock, int threads, long iters, long outside, int n) {
-    Timer timer;
-    run_threads(threads, [&](int) {
+    return run_threads_timed(threads, [&](int) {
         for (long i = 0; i < iters; ++i) {
             lock.acquire();
             consume(is_prime(n));
@@ -14,7 +13,6 @@ double run_once(Lock& lock, int threads, long iters, long outside, int n) {
             for (long j = 0; j < outside; ++j) consume(is_prime(n));
         }
     });
-    return timer.seconds();
 }
 
 int main(int argc, char** argv) {

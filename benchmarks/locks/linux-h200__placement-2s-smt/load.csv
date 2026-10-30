@@ -1,0 +1,8 @@
+config,unix_time,load1
+shortcs:tas:n=101:t=128,1793354635,96.14
+shortcs:ttas:n=101:t=128,1793354637,96.14
+shortcs:tas_bo:n=101:t=128,1793354638,95.89
+shortcs:ttas_bo:n=101:t=128,1793354638,95.89
+shortcs:ticket:n=101:t=128,1793354639,95.89
+shortcs:mcs:n=101:t=128,1793354645,101.10
+shortcs:std_mutex:n=101:t=128,1793354646,101.10

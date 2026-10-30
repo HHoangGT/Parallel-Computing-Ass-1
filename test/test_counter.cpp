@@ -74,6 +74,13 @@ int main(int argc, char** argv) {
     auto calls = [&](int threads) { return threads > cores ? std::max(per / 1000, 1L) : per; };
     int failures = 0;
     for (auto& name : counter_names()) {
+#if UNDER_TSAN
+        // Spinlock counters livelock under TSan; test_locks checks those locks.
+        if (name.rfind("lock_", 0) == 0 && name != "lock_mutex" && name != "lock_pthread" && name != "lock_omp") {
+            std::printf("[SKIP] %s (spinlock under TSan; covered by test_locks)\n", name.c_str());
+            continue;
+        }
+#endif
         bool unique = name != "sharded";
         bool passed = true;
         for (int threads : thread_counts) {

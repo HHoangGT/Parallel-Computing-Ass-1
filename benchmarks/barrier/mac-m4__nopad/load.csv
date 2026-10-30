@@ -1,0 +1,13 @@
+config,unix_time,load1
+barrier:sr:t=1,1793354371,69.66
+barrier:sr:t=2,1793354371,69.66
+barrier:sr:t=4,1793354371,69.66
+barrier:sr:t=5,1793354372,69.66
+barrier:sr:t=8,1793354372,69.66
+barrier:sr:t=10,1793354372,69.66
+barrier:std:t=1,1793354372,69.66
+barrier:std:t=2,1793354372,69.66
+barrier:std:t=4,1793354372,69.66
+barrier:std:t=5,1793354372,69.66
+barrier:std:t=8,1793354373,64.49
+barrier:std:t=10,1793354373,64.49

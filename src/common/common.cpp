@@ -10,7 +10,7 @@ int is_prime(int p) {
     return 1;
 }
 
-static volatile int g_sink;
+static thread_local volatile int g_sink;  // per thread: no shared cache line in the outside work
 void consume(int x) { g_sink = x; }
 
 double Timer::seconds() const {

@@ -1,0 +1,15 @@
+ctxsw: pthread ow=0 vol=6909 invol=14
+ctxsw: pthread ow=2 vol=7073 invol=16
+ctxsw: std_mutex ow=0 vol=7004 invol=8
+ctxsw: std_mutex ow=2 vol=7106 invol=24
+ctxsw: mcs ow=0 vol=14 invol=96
+ctxsw: mcs ow=2 vol=18 invol=172
+ctxsw: ttas ow=0 vol=12 invol=97
+ctxsw: ttas ow=2 vol=18 invol=222
+ttasbump: tas
+ttasbump: ttas
+ttasbump: ttas_bo
+ttasbump: mcs
+ttasbump: pthread
+followups done -> benchmarks/followup/linux-a6000
+FOLLOWUPS_DONE

@@ -8,13 +8,15 @@
 #endif
 
 #include "backoff.h"
+#include "mem_order.h"
 
 struct alignas(CACHE_LINE) PaddedBool {
     bool value = true;
 };
 
+// The last arrival resets count before it flips sense, so no thread can lap the others.
 template <bool Backoff>
-class SenseReversingBarrierT {
+class alignas(CACHE_LINE > 64 ? CACHE_LINE : 64) SenseReversingBarrierT {  // outer alignment kept for the nopad ablation
     const int N;
     alignas(CACHE_LINE) std::atomic<int> count{0};
     alignas(CACHE_LINE) std::atomic<bool> sense{true};
@@ -25,12 +27,12 @@ public:
 
     void arrive_and_wait(int self) {
         bool my_sense = lsense[self].value = !lsense[self].value;
-        if (count.fetch_add(1, std::memory_order_acq_rel) == N - 1) {
-            count.store(0, std::memory_order_relaxed);
-            sense.store(my_sense, std::memory_order_release);
+        if (count.fetch_add(1, mo_acq_rel) == N - 1) {
+            count.store(0, mo_relaxed);
+            sense.store(my_sense, mo_release);
         } else {
             ExpBackoff backoff;
-            while (sense.load(std::memory_order_acquire) != my_sense) {
+            while (sense.load(mo_acquire) != my_sense) {
                 if constexpr (Backoff) backoff.pause(); else cpu_relax();
             }
         }
@@ -39,6 +41,7 @@ public:
 using SenseReversingBarrier = SenseReversingBarrierT<false>;
 using SenseReversingBarrierBO = SenseReversingBarrierT<true>;
 
+// pthread_barrier_t exists on Linux only.
 class StdBarrier {
     std::barrier<> barrier_;
 

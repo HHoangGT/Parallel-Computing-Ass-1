@@ -49,7 +49,8 @@ def plot_locks(plat_dir, read, summary, name, ncpu):
         locks = [lock for lock in LOCK_ORDER if lock in set(med["lock"])]
         outside_works = sorted(med["outside"].unique())
         fig, axes = plt.subplots(1, len(outside_works), figsize=(3.4 * len(outside_works), 3.4), sharey=True)
-        for ax, outside_work in zip(axes if len(outside_works) > 1 else [axes], outside_works):
+        axes = list(axes) if len(outside_works) > 1 else [axes]
+        for ax, outside_work in zip(axes, outside_works):
             for lock in locks:
                 series = med[(med["lock"] == lock) & (med["outside"] == outside_work)]
                 ax.plot(series["threads"], series["seconds"], marker="o", ms=3, label=lock)
@@ -168,7 +169,8 @@ def plot_counter(plat_dir, read, summary, name, ncpu):
 
 
 def plot_mpi(plat_dir, read, summary, name, ncpu):
-    parts = [("mpi_lock.csv", "lock", "acq_per_sec", "lock acquisitions/s"),
+    parts = [("mpi_counter.csv", "counter", "mops_per_sec", "M ops/s"),
+             ("mpi_lock.csv", "lock", "acq_per_sec", "lock acquisitions/s"),
              ("mpi_barrier.csv", "barrier", "episodes_per_sec", "episodes/s")]
     present = [part for part in parts if (plat_dir / part[0]).exists()]
     if not present:

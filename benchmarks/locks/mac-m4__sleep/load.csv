@@ -1,0 +1,13 @@
+config,unix_time,load1
+backoff:tas_bo:max_delay=16,1793354381,59.40
+backoff:tas_bo:max_delay=64,1793354381,59.40
+backoff:tas_bo:max_delay=256,1793354381,59.40
+backoff:tas_bo:max_delay=1024,1793354381,59.40
+backoff:tas_bo:max_delay=4096,1793354382,59.40
+backoff:tas_bo:max_delay=16384,1793354382,59.40
+backoff:ttas_bo:max_delay=16,1793354382,59.40
+backoff:ttas_bo:max_delay=64,1793354382,59.40
+backoff:ttas_bo:max_delay=256,1793354382,59.40
+backoff:ttas_bo:max_delay=1024,1793354382,54.97
+backoff:ttas_bo:max_delay=4096,1793354383,54.97
+backoff:ttas_bo:max_delay=16384,1793354383,54.97

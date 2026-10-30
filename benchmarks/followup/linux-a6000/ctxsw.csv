@@ -1,0 +1,9 @@
+lock,threads,outside,seconds_total,voluntary_cs,involuntary_cs
+pthread,64,0,0:00.38,6909,14
+pthread,64,2,0:00.65,7073,16
+std_mutex,64,0,0:00.37,7004,8
+std_mutex,64,2,0:00.55,7106,24
+mcs,64,0,0:00.35,14,96
+mcs,64,2,0:00.43,18,172
+ttas,64,0,0:00.35,12,97
+ttas,64,2,0:00.43,18,222

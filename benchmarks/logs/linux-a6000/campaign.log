@@ -1,0 +1,634 @@
+platform: linux-a6000
+date: Fri Oct 30 04:07:01 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 1 2 4 8 12 16 24 32 48 64 96 144
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: none
+bench_args: none
+load1_at_start: 2.72
+locks: tas ow=0 t=1
+locks: tas ow=0 t=2
+locks: tas ow=0 t=4
+locks: tas ow=0 t=8
+locks: tas ow=0 t=12
+locks: tas ow=0 t=16
+locks: tas ow=0 t=24
+locks: tas ow=0 t=32
+locks: tas ow=0 t=48
+locks: tas ow=0 t=64
+locks: tas ow=0 t=96
+locks: tas ow=0 t=144
+locks: tas ow=2 t=1
+locks: tas ow=2 t=2
+locks: tas ow=2 t=4
+locks: tas ow=2 t=8
+locks: tas ow=2 t=12
+locks: tas ow=2 t=16
+locks: tas ow=2 t=24
+locks: tas ow=2 t=32
+locks: tas ow=2 t=48
+locks: tas ow=2 t=64
+locks: tas ow=2 t=96
+locks: tas ow=2 t=144
+locks: tas ow=8 t=1
+locks: tas ow=8 t=2
+locks: tas ow=8 t=4
+locks: tas ow=8 t=8
+locks: tas ow=8 t=12
+locks: tas ow=8 t=16
+locks: tas ow=8 t=24
+locks: tas ow=8 t=32
+locks: tas ow=8 t=48
+locks: tas ow=8 t=64
+locks: tas ow=8 t=96
+locks: tas ow=8 t=144
+locks: ttas ow=0 t=1
+locks: ttas ow=0 t=2
+locks: ttas ow=0 t=4
+locks: ttas ow=0 t=8
+locks: ttas ow=0 t=12
+locks: ttas ow=0 t=16
+locks: ttas ow=0 t=24
+locks: ttas ow=0 t=32
+locks: ttas ow=0 t=48
+locks: ttas ow=0 t=64
+locks: ttas ow=0 t=96
+locks: ttas ow=0 t=144
+locks: ttas ow=2 t=1
+locks: ttas ow=2 t=2
+locks: ttas ow=2 t=4
+locks: ttas ow=2 t=8
+locks: ttas ow=2 t=12
+locks: ttas ow=2 t=16
+locks: ttas ow=2 t=24
+locks: ttas ow=2 t=32
+locks: ttas ow=2 t=48
+locks: ttas ow=2 t=64
+locks: ttas ow=2 t=96
+locks: ttas ow=2 t=144
+locks: ttas ow=8 t=1
+locks: ttas ow=8 t=2
+locks: ttas ow=8 t=4
+locks: ttas ow=8 t=8
+locks: ttas ow=8 t=12
+locks: ttas ow=8 t=16
+locks: ttas ow=8 t=24
+locks: ttas ow=8 t=32
+locks: ttas ow=8 t=48
+locks: ttas ow=8 t=64
+locks: ttas ow=8 t=96
+locks: ttas ow=8 t=144
+locks: tas_bo ow=0 t=1
+locks: tas_bo ow=0 t=2
+locks: tas_bo ow=0 t=4
+locks: tas_bo ow=0 t=8
+locks: tas_bo ow=0 t=12
+locks: tas_bo ow=0 t=16
+locks: tas_bo ow=0 t=24
+locks: tas_bo ow=0 t=32
+locks: tas_bo ow=0 t=48
+locks: tas_bo ow=0 t=64
+locks: tas_bo ow=0 t=96
+locks: tas_bo ow=0 t=144
+locks: tas_bo ow=2 t=1
+locks: tas_bo ow=2 t=2
+locks: tas_bo ow=2 t=4
+locks: tas_bo ow=2 t=8
+locks: tas_bo ow=2 t=12
+locks: tas_bo ow=2 t=16
+locks: tas_bo ow=2 t=24
+locks: tas_bo ow=2 t=32
+locks: tas_bo ow=2 t=48
+locks: tas_bo ow=2 t=64
+locks: tas_bo ow=2 t=96
+locks: tas_bo ow=2 t=144
+locks: tas_bo ow=8 t=1
+locks: tas_bo ow=8 t=2
+locks: tas_bo ow=8 t=4
+locks: tas_bo ow=8 t=8
+locks: tas_bo ow=8 t=12
+locks: tas_bo ow=8 t=16
+locks: tas_bo ow=8 t=24
+locks: tas_bo ow=8 t=32
+locks: tas_bo ow=8 t=48
+locks: tas_bo ow=8 t=64
+locks: tas_bo ow=8 t=96
+locks: tas_bo ow=8 t=144
+locks: ttas_bo ow=0 t=1
+locks: ttas_bo ow=0 t=2
+locks: ttas_bo ow=0 t=4
+locks: ttas_bo ow=0 t=8
+locks: ttas_bo ow=0 t=12
+locks: ttas_bo ow=0 t=16
+locks: ttas_bo ow=0 t=24
+locks: ttas_bo ow=0 t=32
+locks: ttas_bo ow=0 t=48
+locks: ttas_bo ow=0 t=64
+locks: ttas_bo ow=0 t=96
+locks: ttas_bo ow=0 t=144
+locks: ttas_bo ow=2 t=1
+locks: ttas_bo ow=2 t=2
+locks: ttas_bo ow=2 t=4
+locks: ttas_bo ow=2 t=8
+locks: ttas_bo ow=2 t=12
+locks: ttas_bo ow=2 t=16
+locks: ttas_bo ow=2 t=24
+locks: ttas_bo ow=2 t=32
+locks: ttas_bo ow=2 t=48
+locks: ttas_bo ow=2 t=64
+locks: ttas_bo ow=2 t=96
+locks: ttas_bo ow=2 t=144
+locks: ttas_bo ow=8 t=1
+locks: ttas_bo ow=8 t=2
+locks: ttas_bo ow=8 t=4
+locks: ttas_bo ow=8 t=8
+locks: ttas_bo ow=8 t=12
+locks: ttas_bo ow=8 t=16
+locks: ttas_bo ow=8 t=24
+locks: ttas_bo ow=8 t=32
+locks: ttas_bo ow=8 t=48
+locks: ttas_bo ow=8 t=64
+locks: ttas_bo ow=8 t=96
+locks: ttas_bo ow=8 t=144
+locks: ticket ow=0 t=1
+locks: ticket ow=0 t=2
+locks: ticket ow=0 t=4
+locks: ticket ow=0 t=8
+locks: ticket ow=0 t=12
+locks: ticket ow=0 t=16
+locks: ticket ow=0 t=24
+locks: ticket ow=0 t=32
+locks: ticket ow=0 t=48
+locks: ticket ow=0 t=64
+locks: ticket ow=0 t=96
+locks: ticket ow=0 t=144
+locks: ticket ow=2 t=1
+locks: ticket ow=2 t=2
+locks: ticket ow=2 t=4
+locks: ticket ow=2 t=8
+locks: ticket ow=2 t=12
+locks: ticket ow=2 t=16
+locks: ticket ow=2 t=24
+locks: ticket ow=2 t=32
+locks: ticket ow=2 t=48
+locks: ticket ow=2 t=64
+locks: ticket ow=2 t=96
+locks: ticket ow=2 t=144
+locks: ticket ow=8 t=1
+locks: ticket ow=8 t=2
+locks: ticket ow=8 t=4
+locks: ticket ow=8 t=8
+locks: ticket ow=8 t=12
+locks: ticket ow=8 t=16
+locks: ticket ow=8 t=24
+locks: ticket ow=8 t=32
+locks: ticket ow=8 t=48
+locks: ticket ow=8 t=64
+locks: ticket ow=8 t=96
+locks: ticket ow=8 t=144
+locks: mcs ow=0 t=1
+locks: mcs ow=0 t=2
+locks: mcs ow=0 t=4
+locks: mcs ow=0 t=8
+locks: mcs ow=0 t=12
+locks: mcs ow=0 t=16
+locks: mcs ow=0 t=24
+locks: mcs ow=0 t=32
+locks: mcs ow=0 t=48
+locks: mcs ow=0 t=64
+locks: mcs ow=0 t=96
+locks: mcs ow=0 t=144
+locks: mcs ow=2 t=1
+locks: mcs ow=2 t=2
+locks: mcs ow=2 t=4
+locks: mcs ow=2 t=8
+locks: mcs ow=2 t=12
+locks: mcs ow=2 t=16
+locks: mcs ow=2 t=24
+locks: mcs ow=2 t=32
+locks: mcs ow=2 t=48
+locks: mcs ow=2 t=64
+locks: mcs ow=2 t=96
+locks: mcs ow=2 t=144
+locks: mcs ow=8 t=1
+locks: mcs ow=8 t=2
+locks: mcs ow=8 t=4
+locks: mcs ow=8 t=8
+locks: mcs ow=8 t=12
+locks: mcs ow=8 t=16
+locks: mcs ow=8 t=24
+locks: mcs ow=8 t=32
+locks: mcs ow=8 t=48
+locks: mcs ow=8 t=64
+locks: mcs ow=8 t=96
+locks: mcs ow=8 t=144
+locks: std_mutex ow=0 t=1
+locks: std_mutex ow=0 t=2
+locks: std_mutex ow=0 t=4
+locks: std_mutex ow=0 t=8
+locks: std_mutex ow=0 t=12
+locks: std_mutex ow=0 t=16
+locks: std_mutex ow=0 t=24
+locks: std_mutex ow=0 t=32
+locks: std_mutex ow=0 t=48
+locks: std_mutex ow=0 t=64
+locks: std_mutex ow=0 t=96
+locks: std_mutex ow=0 t=144
+locks: std_mutex ow=2 t=1
+locks: std_mutex ow=2 t=2
+locks: std_mutex ow=2 t=4
+locks: std_mutex ow=2 t=8
+locks: std_mutex ow=2 t=12
+locks: std_mutex ow=2 t=16
+locks: std_mutex ow=2 t=24
+locks: std_mutex ow=2 t=32
+locks: std_mutex ow=2 t=48
+locks: std_mutex ow=2 t=64
+locks: std_mutex ow=2 t=96
+locks: std_mutex ow=2 t=144
+locks: std_mutex ow=8 t=1
+locks: std_mutex ow=8 t=2
+locks: std_mutex ow=8 t=4
+locks: std_mutex ow=8 t=8
+locks: std_mutex ow=8 t=12
+locks: std_mutex ow=8 t=16
+locks: std_mutex ow=8 t=24
+locks: std_mutex ow=8 t=32
+locks: std_mutex ow=8 t=48
+locks: std_mutex ow=8 t=64
+locks: std_mutex ow=8 t=96
+locks: std_mutex ow=8 t=144
+locks: pthread ow=0 t=1
+locks: pthread ow=0 t=2
+locks: pthread ow=0 t=4
+locks: pthread ow=0 t=8
+locks: pthread ow=0 t=12
+locks: pthread ow=0 t=16
+locks: pthread ow=0 t=24
+locks: pthread ow=0 t=32
+locks: pthread ow=0 t=48
+locks: pthread ow=0 t=64
+locks: pthread ow=0 t=96
+locks: pthread ow=0 t=144
+locks: pthread ow=2 t=1
+locks: pthread ow=2 t=2
+locks: pthread ow=2 t=4
+locks: pthread ow=2 t=8
+locks: pthread ow=2 t=12
+locks: pthread ow=2 t=16
+locks: pthread ow=2 t=24
+locks: pthread ow=2 t=32
+locks: pthread ow=2 t=48
+locks: pthread ow=2 t=64
+locks: pthread ow=2 t=96
+locks: pthread ow=2 t=144
+locks: pthread ow=8 t=1
+locks: pthread ow=8 t=2
+locks: pthread ow=8 t=4
+locks: pthread ow=8 t=8
+locks: pthread ow=8 t=12
+locks: pthread ow=8 t=16
+locks: pthread ow=8 t=24
+locks: pthread ow=8 t=32
+locks: pthread ow=8 t=48
+locks: pthread ow=8 t=64
+locks: pthread ow=8 t=96
+locks: pthread ow=8 t=144
+locks: omp ow=0 t=1
+locks: omp ow=0 t=2
+locks: omp ow=0 t=4
+locks: omp ow=0 t=8
+locks: omp ow=0 t=12
+locks: omp ow=0 t=16
+locks: omp ow=0 t=24
+locks: omp ow=0 t=32
+locks: omp ow=0 t=48
+locks: omp ow=0 t=64
+locks: omp ow=0 t=96
+locks: omp ow=0 t=144
+locks: omp ow=2 t=1
+locks: omp ow=2 t=2
+locks: omp ow=2 t=4
+locks: omp ow=2 t=8
+locks: omp ow=2 t=12
+locks: omp ow=2 t=16
+locks: omp ow=2 t=24
+locks: omp ow=2 t=32
+locks: omp ow=2 t=48
+locks: omp ow=2 t=64
+locks: omp ow=2 t=96
+locks: omp ow=2 t=144
+locks: omp ow=8 t=1
+locks: omp ow=8 t=2
+locks: omp ow=8 t=4
+locks: omp ow=8 t=8
+locks: omp ow=8 t=12
+locks: omp ow=8 t=16
+locks: omp ow=8 t=24
+locks: omp ow=8 t=32
+locks: omp ow=8 t=48
+locks: omp ow=8 t=64
+locks: omp ow=8 t=96
+locks: omp ow=8 t=144
+shortcs: n=1009 tas
+shortcs: n=1009 ttas
+shortcs: n=1009 tas_bo
+shortcs: n=1009 ttas_bo
+shortcs: n=1009 ticket
+shortcs: n=1009 mcs
+shortcs: n=1009 std_mutex
+shortcs: n=1009 pthread
+shortcs: n=1009 omp
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+shortcs: n=101 pthread
+shortcs: n=101 omp
+barrier: sr t=1
+barrier: sr t=2
+barrier: sr t=4
+barrier: sr t=8
+barrier: sr t=12
+barrier: sr t=16
+barrier: sr t=24
+barrier: sr t=32
+barrier: sr t=48
+barrier: sr t=64
+barrier: sr t=96
+barrier: sr t=144
+barrier: sr_bo t=1
+barrier: sr_bo t=2
+barrier: sr_bo t=4
+barrier: sr_bo t=8
+barrier: sr_bo t=12
+barrier: sr_bo t=16
+barrier: sr_bo t=24
+barrier: sr_bo t=32
+barrier: sr_bo t=48
+barrier: sr_bo t=64
+barrier: sr_bo t=96
+barrier: sr_bo t=144
+barrier: std t=1
+barrier: std t=2
+barrier: std t=4
+barrier: std t=8
+barrier: std t=12
+barrier: std t=16
+barrier: std t=24
+barrier: std t=32
+barrier: std t=48
+barrier: std t=64
+barrier: std t=96
+barrier: std t=144
+barrier: omp t=1
+barrier: omp t=2
+barrier: omp t=4
+barrier: omp t=8
+barrier: omp t=12
+barrier: omp t=16
+barrier: omp t=24
+barrier: omp t=32
+barrier: omp t=48
+barrier: omp t=64
+barrier: omp t=96
+barrier: omp t=144
+barrier: pthread t=1
+barrier: pthread t=2
+barrier: pthread t=4
+barrier: pthread t=8
+barrier: pthread t=12
+barrier: pthread t=16
+barrier: pthread t=24
+barrier: pthread t=32
+barrier: pthread t=48
+barrier: pthread t=64
+barrier: pthread t=96
+barrier: pthread t=144
+mpi: p=2
+mpi: p=4
+mpi: p=8
+mpi: p=16
+done -> benchmarks/*/linux-a6000
+placement 1s-nosmt: T=24 cpus=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+platform: linux-a6000__placement-1s-nosmt
+date: Fri Oct 30 05:07:19 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 24
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+bench_args: none
+load1_at_start: 16.09
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=24
+barrier: std t=24
+done -> benchmarks/*/linux-a6000__placement-1s-nosmt
+placement 1s-smt: T=24 cpus=0,48,1,49,2,50,3,51,4,52,5,53,6,54,7,55,8,56,9,57,10,58,11,59
+platform: linux-a6000__placement-1s-smt
+date: Fri Oct 30 05:07:23 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 24
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,48,1,49,2,50,3,51,4,52,5,53,6,54,7,55,8,56,9,57,10,58,11,59
+bench_args: none
+load1_at_start: 15.61
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=24
+barrier: std t=24
+done -> benchmarks/*/linux-a6000__placement-1s-smt
+placement 2s-nosmt: T=24 cpus=0,1,2,3,4,5,6,7,8,9,10,11,24,25,26,27,28,29,30,31,32,33,34,35
+platform: linux-a6000__placement-2s-nosmt
+date: Fri Oct 30 05:07:27 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 24
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,1,2,3,4,5,6,7,8,9,10,11,24,25,26,27,28,29,30,31,32,33,34,35
+bench_args: none
+load1_at_start: 15.61
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=24
+barrier: std t=24
+done -> benchmarks/*/linux-a6000__placement-2s-nosmt
+placement 2s-smt: T=24 cpus=0,48,1,49,2,50,3,51,4,52,5,53,24,72,25,73,26,74,27,75,28,76,29,77
+platform: linux-a6000__placement-2s-smt
+date: Fri Oct 30 05:07:32 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 24
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,48,1,49,2,50,3,51,4,52,5,53,24,72,25,73,26,74,27,75,28,76,29,77
+bench_args: none
+load1_at_start: 15.24
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=24
+barrier: std t=24
+done -> benchmarks/*/linux-a6000__placement-2s-smt
+platform: linux-a6000__nopad
+date: Fri Oct 30 05:07:44 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 1 2 4 8 16 24 48 96 
+build: build-nopad  CACHE_LINE=8  SEQ_CST=OFF
+runner: none
+bench_args: none
+load1_at_start: 13.98
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=1
+barrier: sr t=2
+barrier: sr t=4
+barrier: sr t=8
+barrier: sr t=16
+barrier: sr t=24
+barrier: sr t=48
+barrier: sr t=96
+barrier: std t=1
+barrier: std t=2
+barrier: std t=4
+barrier: std t=8
+barrier: std t=16
+barrier: std t=24
+barrier: std t=48
+barrier: std t=96
+done -> benchmarks/*/linux-a6000__nopad
+platform: linux-a6000__seqcst
+date: Fri Oct 30 05:08:45 PM +07 2026
+uname: Linux u116614 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 96
+Model name:                              AMD EPYC 7352 24-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      24
+Socket(s):                               2
+L1d cache:                               1.5 MiB (48 instances)
+L2 cache:                                24 MiB (48 instances)
+L3 cache:                                256 MiB (16 instances)
+NUMA node(s):                            2
+MemTotal:       528191584 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 1 2 4 8 16 24 48 96 
+build: build-seqcst  CACHE_LINE=64  SEQ_CST=ON
+runner: none
+bench_args: none
+load1_at_start: 30.96
+shortcs: n=101 tas
+shortcs: n=101 ttas
+shortcs: n=101 tas_bo
+shortcs: n=101 ttas_bo
+shortcs: n=101 ticket
+shortcs: n=101 mcs
+shortcs: n=101 std_mutex
+barrier: sr t=1
+barrier: sr t=2
+barrier: sr t=4
+barrier: sr t=8
+barrier: sr t=16
+barrier: sr t=24
+barrier: sr t=48
+barrier: sr t=96
+barrier: std t=1
+barrier: std t=2
+barrier: std t=4
+barrier: std t=8
+barrier: std t=16
+barrier: std t=24
+barrier: std t=48
+barrier: std t=96
+done -> benchmarks/*/linux-a6000__seqcst
+ablations done -> benchmarks/*/linux-a6000__*
+CAMPAIGN_DONE

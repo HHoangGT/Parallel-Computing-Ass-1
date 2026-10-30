@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cstdio>
 #include <vector>
 
@@ -54,7 +55,8 @@ int main(int argc, char** argv) {
     bool check = args.geti("check", 0) != 0;
 
     std::string row = variant + "," + std::to_string(nprocs) + "," + std::to_string(episodes) + ",TIMEOUT,0,timeout";
-    start_watchdog(args.geti("timeout", 60), rank == 0 ? row : "");
+    // rank 0 prints the TIMEOUT row and exits first; other ranks only fire 5 s later as a fallback
+    start_watchdog(args.geti("timeout", 60) + (rank == 0 ? 0 : 5), rank == 0 ? row : "");
 
     int* base;
     MPI_Win win;
@@ -64,17 +66,24 @@ int main(int argc, char** argv) {
     MPI_Win_lock_all(0, win);
     MPI_Barrier(MPI_COMM_WORLD);
 
+    // Check correctness untimed first; the timed run has one barrier per episode.
     long errors = 0;
     double seconds;
+    auto measure = [&](auto& barrier) {
+        if (check) run(barrier, std::min(episodes, 500L), true, win, errors);
+        MPI_Barrier(MPI_COMM_WORLD);
+        long unused = 0;
+        return run(barrier, episodes, false, win, unused);
+    };
     if (variant == "sr") {
         SenseBarrierMPI<false> barrier{win};
-        seconds = run(barrier, episodes, check, win, errors);
+        seconds = measure(barrier);
     } else if (variant == "sr_bo") {
         SenseBarrierMPI<true> barrier{win};
-        seconds = run(barrier, episodes, check, win, errors);
+        seconds = measure(barrier);
     } else {
         MPIBarrier barrier;
-        seconds = run(barrier, episodes, check, win, errors);
+        seconds = measure(barrier);
     }
 
     double max_seconds;
