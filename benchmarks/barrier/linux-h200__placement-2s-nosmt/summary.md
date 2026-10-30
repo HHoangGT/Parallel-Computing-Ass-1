@@ -1,0 +1,31 @@
+# barrier / linux-h200__placement-2s-nosmt: benchmark summary (medians over repetitions)
+
+```
+platform: linux-h200__placement-2s-nosmt
+date: Fri Oct 30 10:03:48 AM UTC 2026
+uname: Linux namih200001 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+logical_cpus: 512
+Model name:                              AMD EPYC 9754 128-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      128
+Socket(s):                               2
+L1d cache:                               8 MiB (256 instances)
+L2 cache:                                256 MiB (256 instances)
+L3 cache:                                512 MiB (32 instances)
+NUMA node(s):                            2
+MemTotal:       1584053800 kB
+compiler: clang version 23.1.4 (https://github.com/conda-forge/clangdev-feedstock babf9b0ec04c97fffe9fc24ec045deeb91a2c910)
+threads_swept: 128
+build: build  CACHE_LINE=64  SEQ_CST=OFF
+runner: numactl --physcpubind=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191
+bench_args: none
+load1_at_start: 99.72
+```
+
+## Barrier: median episodes/s
+
+|   threads |     sr |   std |
+|----------:|-------:|------:|
+|       128 | 137121 |  6568 |
+
+TIMEOUT rows dropped: barrier.csv: 0.

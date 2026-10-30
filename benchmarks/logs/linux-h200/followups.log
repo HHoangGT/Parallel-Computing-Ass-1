@@ -1,0 +1,35 @@
+convoy: mcs t=448 others=29.9
+convoy: mcs t=480 others=43.0
+convoy: mcs t=496 others=40.6
+convoy: mcs t=504 others=49.1
+convoy: mcs t=512 others=33.1
+convoy: ticket t=448 others=31.7
+convoy: ticket t=480 others=25.0
+convoy: ticket t=496 others=42.2
+convoy: ticket t=504 others=32.5
+convoy: ticket t=512 others=101.8
+convoy: ttas t=448 others=128.1
+convoy: ttas t=480 others=113.7
+convoy: ttas t=496 others=116.0
+convoy: ttas t=504 others=107.4
+convoy: ttas t=512 others=113.1
+convoy: pthread t=448 others=117.4
+convoy: pthread t=480 others=114.5
+convoy: pthread t=496 others=115.1
+convoy: pthread t=504 others=105.5
+convoy: pthread t=512 others=97.0
+ctxsw: pthread ow=0 vol=7003 invol=9
+ctxsw: pthread ow=2 vol=7068 invol=10
+ctxsw: std_mutex ow=0 vol=6990 invol=9
+ctxsw: std_mutex ow=2 vol=7026 invol=9
+ctxsw: mcs ow=0 vol=38 invol=62
+ctxsw: mcs ow=2 vol=24 invol=70
+ctxsw: ttas ow=0 vol=13 invol=45
+ctxsw: ttas ow=2 vol=14 invol=42
+ttasbump: tas
+ttasbump: ttas
+ttasbump: ttas_bo
+ttasbump: mcs
+ttasbump: pthread
+followups done -> benchmarks/followup/linux-h200
+FOLLOWUPS_DONE
