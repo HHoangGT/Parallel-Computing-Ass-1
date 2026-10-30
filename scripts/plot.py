@@ -55,7 +55,7 @@ def plot_locks(plat_dir, read, summary, name, ncpu):
                 series = med[(med["lock"] == lock) & (med["outside"] == outside_work)]
                 ax.plot(series["threads"], series["seconds"], marker="o", ms=3, label=lock)
             ax.set_yscale("log")
-            ax.set_title(f"OUTSIDE_WORK={outside_work}  (CS = 1/{outside_work + 1} of work)")
+            ax.set_title(f"W = {outside_work} (CS = 1/{outside_work + 1} of work)", fontsize=9)
             ax.set_xlabel("threads")
             vline(ax, ncpu)
         axes[0].set_ylabel("execution time [s] (median, log)")
