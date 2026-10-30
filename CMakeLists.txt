@@ -4,10 +4,18 @@ if(APPLE AND NOT DEFINED CMAKE_CXX_COMPILER AND EXISTS /opt/homebrew/opt/llvm/bi
   set(CMAKE_CXX_COMPILER /opt/homebrew/opt/llvm/bin/clang++ CACHE FILEPATH "C++ compiler")
 endif()
 
+if(CMAKE_HOST_WIN32 AND NOT DEFINED CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
+endif()
+
 project(Assignment1 LANGUAGES CXX)
 
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   message(FATAL_ERROR "In-source builds not allowed. Please make a new directory and run CMake from there.")
+endif()
+
+if(CMAKE_CONFIGURATION_TYPES)
+  message(FATAL_ERROR "Multi-config generators (the Windows default, Visual Studio) build Debug into build/<Config>/ where scripts/run_all.sh cannot find the binaries. Configure with -G Ninja.")
 endif()
 
 option(TSAN "Build with ThreadSanitizer" OFF)
@@ -41,6 +49,12 @@ if(WITH_OPENMP AND NOT TSAN)
       set(OpenMP_CXX_LIB_NAMES omp)
       set(OpenMP_omp_LIBRARY "${libomp_prefix}/lib/libomp.dylib")
     endif()
+  elseif(MSVC AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    # clang-cl on Windows: point FindOpenMP at the libomp shipped with LLVM.
+    get_filename_component(llvm_bin ${CMAKE_CXX_COMPILER} DIRECTORY)
+    set(OpenMP_CXX_FLAGS -openmp)
+    set(OpenMP_CXX_LIB_NAMES libomp)
+    set(OpenMP_libomp_LIBRARY ${llvm_bin}/../lib/libomp.lib)
   endif()
   find_package(OpenMP COMPONENTS CXX)
   if(OpenMP_CXX_FOUND)

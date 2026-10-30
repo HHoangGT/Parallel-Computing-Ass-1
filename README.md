@@ -9,7 +9,7 @@ cmake -S . -B build && cmake --build build
 ```
 
 Options on the first configure: `-DCMAKE_CXX_COMPILER=<path>` (macOS defaults to Homebrew LLVM when installed), `-DCACHE_LINE=<bytes>` (auto-detected: `sysctl` on macOS, `getconf` on Linux, 64 on Windows), `-DWITH_OPENMP=OFF`, `-DWITH_MPI=OFF`.
-Dependencies: macOS `brew install libomp open-mpi` (Apple clang works; `brew install llvm` is optional); Linux g++ 13, libomp, OpenMPI; Windows MSVC or clang-cl (the shell scripts need Git Bash or WSL).
+Dependencies: macOS `brew install libomp open-mpi` (Apple clang works; `brew install llvm` is optional); Linux clang (we used conda-forge clang 23 + Open MPI 5) or g++ 13, libomp, Open MPI; Windows Visual Studio with the "C++ Clang Compiler" component, configured as `cmake -S . -B build -G Ninja -DCMAKE_CXX_COMPILER=clang-cl` (or `cl` from a Developer shell; the default Visual Studio generator is rejected because it builds Debug into `build/<Config>/`), and the shell scripts need Git Bash or WSL.
 
 ## Tests
 
@@ -45,7 +45,7 @@ PLATFORM=mac-m4pro ./scripts/run_all.sh
 ```
 
 ```bash
-uv run scripts/plot.py
+uv sync && uv run scripts/plot.py
 ```
 
 `run_all.sh` builds `./build` if needed and writes `benchmarks/<part>/<platform>/*.csv` and `platform.txt`; `PARTS` entries map to folders as locks, shortcs, backoff -> `locks`, barrier -> `barrier`, counter, fairness -> `counter`, mpi -> `mpi`. Knobs: `PARTS` (default `locks shortcs backoff barrier counter fairness mpi`), `THREADS`, `REPS`, `TIMEOUT`, `TOTAL`, `FAIR_SECONDS`, `BUILD`. `plot.py` writes `fig_*.png` and `summary.md` next to each CSV (medians over repetitions).

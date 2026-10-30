@@ -1,7 +1,3 @@
-# /// script
-# requires-python = ">=3.9"
-# dependencies = ["pandas", "matplotlib", "tabulate"]
-# ///
 import sys
 from pathlib import Path
 
